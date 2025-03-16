@@ -5,7 +5,7 @@ A student created testsuite for the [Übersetzterbau (Compilers)](https://tiss.t
 
 ## Usage
 1. `git clone https://github.com/MordJunior/complang.git ~/test`
-2. The tests starting from the "scanner" example should be picked up automatically the the test scripts on the server
+2. The tests starting from the "scanner" example should be picked up automatically from the test scripts on the server
 
 ## Tips
 With the following optional convenience function added to your `.bashrc` you can run the test suite by executing `runtest <exercise>` or simply `runtest` if you are in the directory you want to test:
