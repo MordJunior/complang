@@ -1,0 +1,4 @@
+generated_test_*.0
+.antlr
+__pycache__
+UebersetzerbauGenerator.py
