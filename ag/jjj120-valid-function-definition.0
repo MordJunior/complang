@@ -1,0 +1,20 @@
+foo(x: int, y: array of int): int
+  var z: int := 42;
+  if x < z then
+    return (x + z);
+  else
+    return y[0] * x;
+  end;
+end;
+
+bar(arr: array of int): int
+    arr[0] := 10;
+    arr[1] := 20;
+    arr[2] := 30;
+    dec_after(1);
+    return foo(10, arr);
+end;
+
+dec_after(x: int): int
+    return x - 1;
+end;

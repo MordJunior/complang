@@ -1,0 +1,6 @@
+testfunction(par1: int, par2: array of int): int;
+
+foo(x: int, y: array of int): int;
+bar(): int;
+
+baz(a: int, b: int): int;
