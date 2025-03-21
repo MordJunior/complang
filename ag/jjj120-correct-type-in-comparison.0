@@ -1,0 +1,21 @@
+test(x: int, y: array of int, a: int, b: array of int, i: array of array of array of int, j: array of array of array of int): int
+    if x = a then
+        return 1;
+    end;
+    if y = b then
+        return 1;
+    end;
+    if (i = j) then
+        return 1;
+    end;
+    if (i[0][1][2]) = x then
+        return 1;
+    end;
+    if i[1][2] = (y) then
+        return 1;
+    end;
+
+    if i[1][2][7] < x then
+        return 1;
+    end;
+end;

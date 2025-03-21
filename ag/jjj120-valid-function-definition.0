@@ -1,10 +1,10 @@
 foo(x: int, y: array of int): int
-  var z: int := 42;
-  if x < z then
-    return (x + z);
-  else
-    return y[0] * x;
-  end;
+    var z: int := 42;
+    if x < z then
+        return (x + z);
+    else
+        return y[0] * x;
+    end;
 end;
 
 bar(arr: array of int): int

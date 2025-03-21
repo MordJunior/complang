@@ -1,6 +1,6 @@
 /*
 baz(a: int, b: int): int
-  this_is an error!
+    this_is an error!
 end;
 */
 

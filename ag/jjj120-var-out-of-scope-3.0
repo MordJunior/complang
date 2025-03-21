@@ -1,0 +1,7 @@
+baz(a: int, b: int): int
+    var c: int := a;
+    while a < b do
+        return a;
+    end;
+    return a;
+end;

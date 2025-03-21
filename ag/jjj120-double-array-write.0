@@ -1,0 +1,6 @@
+foo(a: array of array of int, b: array of int): int
+    var x: array of int := a[0];
+    var y: array of int := a[2];
+    var z: int := a[0][2];
+    var w: int := b[0];
+end;
