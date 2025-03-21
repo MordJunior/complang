@@ -1,6 +1,6 @@
 grammar Uebersetzerbau;
 
-program: (funcdef | fundec) ';' (program)? EOF;
+program: ((funcdef | fundec) ';')+ EOF;
 
 funcdef: fundec stats END;
 
@@ -37,8 +37,6 @@ term:
 	| ID
 	| ID '(' (expr (',' expr)*)? ')';
 
-WS: [ \t\r\n]+ -> skip;
-COMMENT: '/*' .*? '*/' -> skip;
 END: 'end';
 IF: 'if';
 THEN: 'then';
@@ -52,5 +50,10 @@ INT: 'int';
 RETURN: 'return';
 OR: 'or';
 NOT: 'not';
+
 NUM: [0x]? [0-9]+;
+
 ID: [a-zA-Z][a-zA-Z_0-9]*;
+
+WS: [ \t\n\r\f]+ -> skip;
+COMMENT: '/*' .*? '*/' -> skip;
