@@ -1,0 +1,5 @@
+foo(a: int, b: int, c: int): int
+    var x: int := a + b + c + a;
+    var y: int := a * b * c;
+    var z: int := a - b;
+end;
