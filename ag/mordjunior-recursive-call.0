@@ -1,0 +1,6 @@
+foo(arr : array of int) : int;
+bar(i : int) : int;
+
+foobar(arr : array of int, i : int) : array of int
+  foobar(arr, i - 1);
+end ;

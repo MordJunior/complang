@@ -1,0 +1,7 @@
+foo(arr : array of int) : int;
+bar(i : int) : array of int;
+
+foobar(arr : array of int, i : int) : array of int
+  var x : array of int := bar(foo(arr));
+  return bar(foo(x));
+end ;
