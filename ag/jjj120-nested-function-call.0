@@ -1,0 +1,7 @@
+foo(a: array of int): int;
+bar(a: int): int;
+baz(a: int, b: int): int;
+
+foobar(a: array of int): int
+    return baz(bar(foo(a)), bar(bar(bar(bar(a[0])))));
+end;
