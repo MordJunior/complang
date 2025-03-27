@@ -1,0 +1,5 @@
+bar(): array of int;
+
+foo(a: array of int): int
+    return a[bar()[42]];
+end;

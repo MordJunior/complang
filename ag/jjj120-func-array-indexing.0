@@ -1,0 +1,7 @@
+foo(): array of int;
+
+bar(): int
+    return foo()[0] + foofoo()[0][42];
+end;
+
+foofoo(): array of array of int;
