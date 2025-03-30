@@ -1,0 +1,2 @@
+extern long foo(long a);
+RET(foo(42) == 42 * 2);

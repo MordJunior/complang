@@ -1,0 +1,4 @@
+extern long foo(long a, long b);
+// fprintf(stderr, "foo(42, 69) returned %ld\n", foo(42, 69));
+// fprintf(stderr, "foo(69, 42) returned %ld\n", foo(69, 42));
+RET(foo(42, 69) == 42 * 69 && foo(69, 42) == 69 * 42);

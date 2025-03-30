@@ -1,0 +1,2 @@
+extern long foo(long a, long b);
+RET(foo(42, 69) == 42 + 1 + 69);

@@ -1,0 +1,3 @@
+foo(a: array of array of int): int
+    return a[42][20];
+end;
