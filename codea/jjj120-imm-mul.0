@@ -1,0 +1,3 @@
+foo(): int
+    return 21 * 2;
+end;
