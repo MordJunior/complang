@@ -1,0 +1,3 @@
+foo(a: array of array of int, b: int, c: int): int
+    return a[b][c];
+end;
