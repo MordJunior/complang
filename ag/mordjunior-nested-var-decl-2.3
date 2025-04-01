@@ -1,0 +1,7 @@
+foo () : int
+  while 1 = 0 do
+    var x : int := 0;
+  end;
+  /* x should not be visible here anymore */
+  return x;
+end;
