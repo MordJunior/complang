@@ -1,0 +1,7 @@
+foo () : int
+  if 1 = 0 then
+    var x : int := 0;
+  end;
+  /* x should not be visible here anymore */
+  return x;
+end;
