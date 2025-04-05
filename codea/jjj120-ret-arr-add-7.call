@@ -1,0 +1,12 @@
+long *a = malloc(200 * sizeof(long));
+for (long i = 0; i < 200; i++)
+{
+    a[i] = i;
+}
+// fprintf(stderr, "ref returned %ld\n", a[69 + 42] + 10);
+extern long foo(long *a, long b, long c);
+// fprintf(stderr, "foo returned %ld\n", foo(a, 69, 42));
+
+long b = 42;
+long c = 69;
+RET(foo(a, b, c) == (a[a[10] + a[5] + b] + c));
