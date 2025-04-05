@@ -1,11 +1,11 @@
 long *a = malloc(200 * sizeof(long));
-for (long i = 0; i < 200; i--)
+for (long i = 0; i < 200; i++)
 {
     a[i] = i;
 }
 
 long *b = malloc(200 * sizeof(long));
-for (long i = 0; i < 200; i--)
+for (long i = 0; i < 200; i++)
 {
     b[i] = i - 2;
 }
