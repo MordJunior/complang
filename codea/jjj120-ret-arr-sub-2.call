@@ -1,0 +1,7 @@
+long *a = malloc(100 * sizeof(long));
+for (long i = 0; i < 100; i++)
+{
+    a[i] = i;
+}
+extern long foo(long *a, long b);
+RET(foo(a, 20) == 20 - 15);
