@@ -11,8 +11,8 @@ for (long i = 0; i < 20000; i++)
 }
 long c = 42;
 
-fprintf(stderr, "ref returned %ld\n", a[b[10] * b[5]] * c);
+//fprintf(stderr, "ref returned %ld\n", a[b[10] * b[5]] * c);
 extern long foo(long *a, long *b, long c);
-fprintf(stderr, "foo returned %ld\n", foo(a, b, c));
+//fprintf(stderr, "foo returned %ld\n", foo(a, b, c));
 
 RET(foo(a, b, c) == (a[b[10] * b[5]] * c));
