@@ -3,7 +3,11 @@ for (long i = 0; i < 200; i++)
 {
     a[i] = i;
 }
-// fprintf(stderr, "ref returned %ld\n", a[69 - 42] - 10);
+long b = 42;
+long c = 69;
+
+// fprintf(stderr, "ref returned %ld\n", a[c - b] - 10);
 extern long foo(long *a, long b, long c);
-// fprintf(stderr, "foo returned %ld\n", foo(a, 69, 42));
-RET(foo(a, 42, 69) == 42 - 69 - 10);
+// fprintf(stderr, "foo returned %ld\n", foo(a, b, c));
+
+RET(foo(a, b, c) == a[c - b] - 10);
