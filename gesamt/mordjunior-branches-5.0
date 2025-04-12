@@ -1,0 +1,12 @@
+bar(i : int) : int
+  return 0 - i;
+end;
+
+foo(a : int, b : int) : int
+  if a < bar(b) then
+    return b;
+  else
+    return a;
+  end;
+end;
+

@@ -1,0 +1,2 @@
+extern long foo(long i);
+RET(foo(100) && foo(0) && foo(-1000));

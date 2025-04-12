@@ -1,0 +1,9 @@
+foo(a : int, b : int) : int
+  var x : int := b + 50;
+  if a < x then
+    return b;
+  else
+    return a;
+  end;
+end;
+

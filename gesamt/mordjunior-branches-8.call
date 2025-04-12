@@ -1,0 +1,8 @@
+extern long foo(long a, long b);
+int result = 1;
+for (long a = -1000; a < 1000; a++) {
+  for (long b = -1000; b < 1000; b++) {
+    result = result && (a < -abs(b) || !(b < -abs(a)) ? foo(a, b) == a - b : foo(a, b) == b - a); 
+  }
+}
+RET(result);
