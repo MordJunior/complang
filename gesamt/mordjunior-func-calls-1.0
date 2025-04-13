@@ -1,0 +1,17 @@
+abs(i : int) : int
+  if i < 0 then
+    return 0 - i;
+  else
+    return i;
+  end;
+end;
+
+foo(a : int, b : int) : int
+  var ba : int := (b - 1) + abs(a);
+  var ab : int := (a - 1) + abs(b);
+  if (ab < ba) then
+    return ab;
+  else
+    return ba;
+  end;
+end;
