@@ -1,0 +1,5 @@
+foo(a: int, b: int) : int
+    var c: int := a + b;
+
+    return c + 1;
+end;
