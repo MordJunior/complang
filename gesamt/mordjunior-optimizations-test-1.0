@@ -3,87 +3,87 @@ ret_imm_01(a : int, b : int) : int
 end;
 
 add_imm_01(a : int, b : int) : int
-  return 0 + 0; 
+  return 0 + 0;
 end;
 
 add_imm_02(a : int, b : int) : int
-  return 0 + 5; 
+  return 0 + 5;
 end;
 
 add_imm_03(a : int, b : int) : int
-  return 5 + 10 + 20; 
+  return 5 + 10 + 20;
 end;
 
 add_imm_04(a : int, b : int) : int
-  return 5 + 10 + 20 + 30; 
+  return 5 + 10 + 20 + 30;
 end;
 
 add_imm_05(a : int, b : int) : int
-  return 0 + a; 
+  return 0 + a;
 end;
 
 add_imm_06(a : int, b : int) : int
-  return a + 0; 
+  return a + 0;
 end;
 
 add_imm_07(a : int, b : int) : int
-  return a + 0 + 0; 
+  return a + 0 + 0;
 end;
 
 add_imm_08(a : int, b : int) : int
-  return 0 + a + 0; 
+  return 0 + a + 0;
 end;
 
 add_imm_09(a : int, b : int) : int
-  return 0 + 0 + a; 
+  return 0 + 0 + a;
 end;
 
 add_imm_10(a : int, b : int) : int
-  return (0); 
+  return (0);
 end;
 
 add_imm_11(a : int, b : int) : int
-  return (0 + 5); 
+  return (0 + 5);
 end;
 
 add_imm_12(a : int, b : int) : int
-  return (5 + 10) + 20; 
+  return (5 + 10) + 20;
 end;
 
 add_imm_13(a : int, b : int) : int
-  return 5 + (10 + 20); 
+  return 5 + (10 + 20);
 end;
 
 add_imm_14(a : int, b : int) : int
-  return (0 + a); 
+  return (0 + a);
 end;
 
 add_imm_15(a : int, b : int) : int
-  return (a + 0); 
+  return (a + 0);
 end;
 
 add_imm_16(a : int, b : int) : int
-  return (a + 0) + 0; 
+  return (a + 0) + 0;
 end;
 
 add_imm_17(a : int, b : int) : int
-  return a + (0 + 0); 
+  return a + (0 + 0);
 end;
 
 add_imm_18(a : int, b : int) : int
-  return (0 + a) + 0; 
+  return (0 + a) + 0;
 end;
 
 add_imm_19(a : int, b : int) : int
-  return 0 + (a + 0); 
+  return 0 + (a + 0);
 end;
 
 add_imm_20(a : int, b : int) : int
-  return (0 + 0) + a; 
+  return (0 + 0) + a;
 end;
 
 add_imm_21(a : int, b : int) : int
-  return 0 + (0 + a); 
+  return 0 + (0 + a);
 end;
 
 add_var_01(a : int, b : int) : int
