@@ -1,0 +1,1 @@
+x():int while x=x do return x; end; end;
