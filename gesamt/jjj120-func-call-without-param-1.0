@@ -1,0 +1,7 @@
+foo(a: int, b: int) : int
+    return one();
+end;
+
+one(): int
+    return 1;
+end;

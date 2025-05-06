@@ -1,0 +1,4 @@
+extern long foo(long a, long b);
+
+// fprintf(stderr, "foo(1, 7) returned %ld, should be 6\n", foo(1, 7));
+RET(foo(1, 7) == 6);
