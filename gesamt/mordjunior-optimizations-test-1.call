@@ -1,0 +1,1135 @@
+long a = 45123;
+long b = -1041;
+
+// ^(\w+)[^;]*return\s+([^;]*);\s+end;\s+
+// extern long $1(long, long);\nif ($1(a, b) != ($2)) {\n\tprintf("first failure: $1\\n");\n\tRET(0);\n}\n\n
+
+extern long ret_imm_01(long, long);
+if (ret_imm_01(a, b) != (0xFFa)) {
+	printf("first failure: ret_imm_01\n");
+	RET(0);
+}
+
+extern long add_imm_01(long, long);
+if (add_imm_01(a, b) != (0 + 0)) {
+	printf("first failure: add_imm_01\n");
+	RET(0);
+}
+
+extern long add_imm_02(long, long);
+if (add_imm_02(a, b) != (0 + 5)) {
+	printf("first failure: add_imm_02\n");
+	RET(0);
+}
+
+extern long add_imm_03(long, long);
+if (add_imm_03(a, b) != (5 + 10 + 20)) {
+	printf("first failure: add_imm_03\n");
+	RET(0);
+}
+
+extern long add_imm_04(long, long);
+if (add_imm_04(a, b) != (5 + 10 + 20 + 30)) {
+	printf("first failure: add_imm_04\n");
+	RET(0);
+}
+
+extern long add_imm_05(long, long);
+if (add_imm_05(a, b) != (0 + a)) {
+	printf("first failure: add_imm_05\n");
+	RET(0);
+}
+
+extern long add_imm_06(long, long);
+if (add_imm_06(a, b) != (a + 0)) {
+	printf("first failure: add_imm_06\n");
+	RET(0);
+}
+
+extern long add_imm_07(long, long);
+if (add_imm_07(a, b) != (a + 0 + 0)) {
+	printf("first failure: add_imm_07\n");
+	RET(0);
+}
+
+extern long add_imm_08(long, long);
+if (add_imm_08(a, b) != (0 + a + 0)) {
+	printf("first failure: add_imm_08\n");
+	RET(0);
+}
+
+extern long add_imm_09(long, long);
+if (add_imm_09(a, b) != (0 + 0 + a)) {
+	printf("first failure: add_imm_09\n");
+	RET(0);
+}
+
+extern long add_imm_10(long, long);
+if (add_imm_10(a, b) != ((0))) {
+	printf("first failure: add_imm_10\n");
+	RET(0);
+}
+
+extern long add_imm_11(long, long);
+if (add_imm_11(a, b) != ((0 + 5))) {
+	printf("first failure: add_imm_11\n");
+	RET(0);
+}
+
+extern long add_imm_12(long, long);
+if (add_imm_12(a, b) != ((5 + 10) + 20)) {
+	printf("first failure: add_imm_12\n");
+	RET(0);
+}
+
+extern long add_imm_13(long, long);
+if (add_imm_13(a, b) != (5 + (10 + 20))) {
+	printf("first failure: add_imm_13\n");
+	RET(0);
+}
+
+extern long add_imm_14(long, long);
+if (add_imm_14(a, b) != ((0 + a))) {
+	printf("first failure: add_imm_14\n");
+	RET(0);
+}
+
+extern long add_imm_15(long, long);
+if (add_imm_15(a, b) != ((a + 0))) {
+	printf("first failure: add_imm_15\n");
+	RET(0);
+}
+
+extern long add_imm_16(long, long);
+if (add_imm_16(a, b) != ((a + 0) + 0)) {
+	printf("first failure: add_imm_16\n");
+	RET(0);
+}
+
+extern long add_imm_17(long, long);
+if (add_imm_17(a, b) != (a + (0 + 0))) {
+	printf("first failure: add_imm_17\n");
+	RET(0);
+}
+
+extern long add_imm_18(long, long);
+if (add_imm_18(a, b) != ((0 + a) + 0)) {
+	printf("first failure: add_imm_18\n");
+	RET(0);
+}
+
+extern long add_imm_19(long, long);
+if (add_imm_19(a, b) != (0 + (a + 0))) {
+	printf("first failure: add_imm_19\n");
+	RET(0);
+}
+
+extern long add_imm_20(long, long);
+if (add_imm_20(a, b) != ((0 + 0) + a)) {
+	printf("first failure: add_imm_20\n");
+	RET(0);
+}
+
+extern long add_imm_21(long, long);
+if (add_imm_21(a, b) != (0 + (0 + a))) {
+	printf("first failure: add_imm_21\n");
+	RET(0);
+}
+
+extern long add_var_01(long, long);
+if (add_var_01(a, b) != (a + b)) {
+	printf("first failure: add_var_01\n");
+	RET(0);
+}
+
+extern long add_var_02(long, long);
+if (add_var_02(a, b) != (a + b + 0)) {
+	printf("first failure: add_var_02\n");
+	RET(0);
+}
+
+extern long add_var_03(long, long);
+if (add_var_03(a, b) != (a + 0 + b)) {
+	printf("first failure: add_var_03\n");
+	RET(0);
+}
+
+extern long add_var_04(long, long);
+if (add_var_04(a, b) != (0 + a + b)) {
+	printf("first failure: add_var_04\n");
+	RET(0);
+}
+
+extern long add_var_05(long, long);
+if (add_var_05(a, b) != (a + b + 10)) {
+	printf("first failure: add_var_05\n");
+	RET(0);
+}
+
+extern long add_var_06(long, long);
+if (add_var_06(a, b) != (a + 10 + b)) {
+	printf("first failure: add_var_06\n");
+	RET(0);
+}
+
+extern long add_var_07(long, long);
+if (add_var_07(a, b) != (10 + a + b)) {
+	printf("first failure: add_var_07\n");
+	RET(0);
+}
+
+extern long add_var_08(long, long);
+if (add_var_08(a, b) != ((a + b) + 0)) {
+	printf("first failure: add_var_08\n");
+	RET(0);
+}
+
+extern long add_var_09(long, long);
+if (add_var_09(a, b) != (a + (b + 0))) {
+	printf("first failure: add_var_09\n");
+	RET(0);
+}
+
+extern long add_var_10(long, long);
+if (add_var_10(a, b) != ((a + 0) + b)) {
+	printf("first failure: add_var_10\n");
+	RET(0);
+}
+
+extern long add_var_11(long, long);
+if (add_var_11(a, b) != (a + (0 + b))) {
+	printf("first failure: add_var_11\n");
+	RET(0);
+}
+
+extern long add_var_12(long, long);
+if (add_var_12(a, b) != ((0 + a) + b)) {
+	printf("first failure: add_var_12\n");
+	RET(0);
+}
+
+extern long add_var_13(long, long);
+if (add_var_13(a, b) != (0 + (a + b))) {
+	printf("first failure: add_var_13\n");
+	RET(0);
+}
+
+extern long add_var_14(long, long);
+if (add_var_14(a, b) != ((a + b) + 10)) {
+	printf("first failure: add_var_14\n");
+	RET(0);
+}
+
+extern long add_var_15(long, long);
+if (add_var_15(a, b) != (a + (b + 10))) {
+	printf("first failure: add_var_15\n");
+	RET(0);
+}
+
+extern long add_var_16(long, long);
+if (add_var_16(a, b) != ((a + 10) + b)) {
+	printf("first failure: add_var_16\n");
+	RET(0);
+}
+
+extern long add_var_17(long, long);
+if (add_var_17(a, b) != (a + (10 + b))) {
+	printf("first failure: add_var_17\n");
+	RET(0);
+}
+
+extern long add_var_18(long, long);
+if (add_var_18(a, b) != ((10 + a) + b)) {
+	printf("first failure: add_var_18\n");
+	RET(0);
+}
+
+extern long add_var_19(long, long);
+if (add_var_19(a, b) != (10 + (a + b))) {
+	printf("first failure: add_var_19\n");
+	RET(0);
+}
+
+extern long sub_imm_01(long, long);
+if (sub_imm_01(a, b) != (0 - 0)) {
+	printf("first failure: sub_imm_01\n");
+	RET(0);
+}
+
+extern long sub_imm_02(long, long);
+if (sub_imm_02(a, b) != (5 - 0)) {
+	printf("first failure: sub_imm_02\n");
+	RET(0);
+}
+
+extern long sub_imm_03(long, long);
+if (sub_imm_03(a, b) != (0 - 5)) {
+	printf("first failure: sub_imm_03\n");
+	RET(0);
+}
+
+extern long sub_imm_04(long, long);
+if (sub_imm_04(a, b) != ((20 - 10) - 5)) {
+	printf("first failure: sub_imm_04\n");
+	RET(0);
+}
+
+extern long sub_imm_05(long, long);
+if (sub_imm_05(a, b) != (20 - (10 - 5))) {
+	printf("first failure: sub_imm_05\n");
+	RET(0);
+}
+
+extern long sub_imm_06(long, long);
+if (sub_imm_06(a, b) != (a - 0)) {
+	printf("first failure: sub_imm_06\n");
+	RET(0);
+}
+
+extern long sub_imm_07(long, long);
+if (sub_imm_07(a, b) != ((a - 0) - 0)) {
+	printf("first failure: sub_imm_07\n");
+	RET(0);
+}
+
+extern long sub_imm_08(long, long);
+if (sub_imm_08(a, b) != (a - (0 - 0))) {
+	printf("first failure: sub_imm_08\n");
+	RET(0);
+}
+
+extern long sub_var_01(long, long);
+if (sub_var_01(a, b) != (a - a)) {
+	printf("first failure: sub_var_01\n");
+	RET(0);
+}
+
+extern long sub_var_02(long, long);
+if (sub_var_02(a, b) != ((a - a) - 0)) {
+	printf("first failure: sub_var_02\n");
+	RET(0);
+}
+
+extern long sub_var_03(long, long);
+if (sub_var_03(a, b) != (a - (a - 0))) {
+	printf("first failure: sub_var_03\n");
+	RET(0);
+}
+
+extern long mul_imm_01(long, long);
+if (mul_imm_01(a, b) != (0 * 5)) {
+	printf("first failure: mul_imm_01\n");
+	RET(0);
+}
+
+extern long mul_imm_02(long, long);
+if (mul_imm_02(a, b) != (1 * 5)) {
+	printf("first failure: mul_imm_02\n");
+	RET(0);
+}
+
+extern long mul_imm_03(long, long);
+if (mul_imm_03(a, b) != (0 * 5 * 10)) {
+	printf("first failure: mul_imm_03\n");
+	RET(0);
+}
+
+extern long mul_imm_04(long, long);
+if (mul_imm_04(a, b) != (1 * 5 * 10)) {
+	printf("first failure: mul_imm_04\n");
+	RET(0);
+}
+
+extern long mul_imm_06(long, long);
+if (mul_imm_06(a, b) != (5 * 10 * 20)) {
+	printf("first failure: mul_imm_06\n");
+	RET(0);
+}
+
+extern long mul_imm_07(long, long);
+if (mul_imm_07(a, b) != (5 * 10 * 20 * 30)) {
+	printf("first failure: mul_imm_07\n");
+	RET(0);
+}
+
+extern long mul_imm_08(long, long);
+if (mul_imm_08(a, b) != (a * 0)) {
+	printf("first failure: mul_imm_08\n");
+	RET(0);
+}
+
+extern long mul_imm_09(long, long);
+if (mul_imm_09(a, b) != (a * 1)) {
+	printf("first failure: mul_imm_09\n");
+	RET(0);
+}
+
+extern long mul_imm_10(long, long);
+if (mul_imm_10(a, b) != (a * 0 * 0)) {
+	printf("first failure: mul_imm_10\n");
+	RET(0);
+}
+
+extern long mul_imm_11(long, long);
+if (mul_imm_11(a, b) != (0 * a * 0)) {
+	printf("first failure: mul_imm_11\n");
+	RET(0);
+}
+
+extern long mul_imm_12(long, long);
+if (mul_imm_12(a, b) != (0 * 0 * a)) {
+	printf("first failure: mul_imm_12\n");
+	RET(0);
+}
+
+extern long mul_imm_13(long, long);
+if (mul_imm_13(a, b) != (a * 1 * 1)) {
+	printf("first failure: mul_imm_13\n");
+	RET(0);
+}
+
+extern long mul_imm_14(long, long);
+if (mul_imm_14(a, b) != (1 * a * 1)) {
+	printf("first failure: mul_imm_14\n");
+	RET(0);
+}
+
+extern long mul_imm_15(long, long);
+if (mul_imm_15(a, b) != (1 * 1 * a)) {
+	printf("first failure: mul_imm_15\n");
+	RET(0);
+}
+
+extern long mul_imm_16(long, long);
+if (mul_imm_16(a, b) != ((a * 0) * 0)) {
+	printf("first failure: mul_imm_16\n");
+	RET(0);
+}
+
+extern long mul_imm_17(long, long);
+if (mul_imm_17(a, b) != (a * (0 * 0))) {
+	printf("first failure: mul_imm_17\n");
+	RET(0);
+}
+
+extern long mul_imm_18(long, long);
+if (mul_imm_18(a, b) != ((0 * a) * 0)) {
+	printf("first failure: mul_imm_18\n");
+	RET(0);
+}
+
+extern long mul_imm_19(long, long);
+if (mul_imm_19(a, b) != (0 * (a * 0))) {
+	printf("first failure: mul_imm_19\n");
+	RET(0);
+}
+
+extern long mul_imm_20(long, long);
+if (mul_imm_20(a, b) != ((0 * 0) * a)) {
+	printf("first failure: mul_imm_20\n");
+	RET(0);
+}
+
+extern long mul_imm_21(long, long);
+if (mul_imm_21(a, b) != (0 * (0 * a))) {
+	printf("first failure: mul_imm_21\n");
+	RET(0);
+}
+
+extern long mul_imm_22(long, long);
+if (mul_imm_22(a, b) != ((a * 1) * 1)) {
+	printf("first failure: mul_imm_22\n");
+	RET(0);
+}
+
+extern long mul_imm_23(long, long);
+if (mul_imm_23(a, b) != (a * (1 * 1))) {
+	printf("first failure: mul_imm_23\n");
+	RET(0);
+}
+
+extern long mul_imm_24(long, long);
+if (mul_imm_24(a, b) != ((1 * a) * 1)) {
+	printf("first failure: mul_imm_24\n");
+	RET(0);
+}
+
+extern long mul_imm_25(long, long);
+if (mul_imm_25(a, b) != (1 * (a * 1))) {
+	printf("first failure: mul_imm_25\n");
+	RET(0);
+}
+
+extern long mul_imm_26(long, long);
+if (mul_imm_26(a, b) != ((1 * 1) * a)) {
+	printf("first failure: mul_imm_26\n");
+	RET(0);
+}
+
+extern long mul_imm_27(long, long);
+if (mul_imm_27(a, b) != (1 * (1 * a))) {
+	printf("first failure: mul_imm_27\n");
+	RET(0);
+}
+
+extern long mul_imm_28(long, long);
+if (mul_imm_28(a, b) != (a * 2)) {
+	printf("first failure: mul_imm_28\n");
+	RET(0);
+}
+
+extern long mul_imm_29(long, long);
+if (mul_imm_29(a, b) != (a * 4)) {
+	printf("first failure: mul_imm_29\n");
+	RET(0);
+}
+
+extern long mul_imm_30(long, long);
+if (mul_imm_30(a, b) != (a * 8)) {
+	printf("first failure: mul_imm_30\n");
+	RET(0);
+}
+
+extern long mul_var_01(long, long);
+if (mul_var_01(a, b) != (a * b * 0)) {
+	printf("first failure: mul_var_01\n");
+	RET(0);
+}
+
+extern long mul_var_02(long, long);
+if (mul_var_02(a, b) != (a * 0 * b)) {
+	printf("first failure: mul_var_02\n");
+	RET(0);
+}
+
+extern long mul_var_03(long, long);
+if (mul_var_03(a, b) != (0 * a * b)) {
+	printf("first failure: mul_var_03\n");
+	RET(0);
+}
+
+extern long mul_var_04(long, long);
+if (mul_var_04(a, b) != ((a * b) * 0)) {
+	printf("first failure: mul_var_04\n");
+	RET(0);
+}
+
+extern long mul_var_05(long, long);
+if (mul_var_05(a, b) != (a * (b * 0))) {
+	printf("first failure: mul_var_05\n");
+	RET(0);
+}
+
+extern long mul_var_06(long, long);
+if (mul_var_06(a, b) != ((a * 0) * b)) {
+	printf("first failure: mul_var_06\n");
+	RET(0);
+}
+
+extern long mul_var_07(long, long);
+if (mul_var_07(a, b) != (a * (0 * b))) {
+	printf("first failure: mul_var_07\n");
+	RET(0);
+}
+
+extern long mul_var_08(long, long);
+if (mul_var_08(a, b) != ((0 * a) * b)) {
+	printf("first failure: mul_var_08\n");
+	RET(0);
+}
+
+extern long mul_var_09(long, long);
+if (mul_var_09(a, b) != (0 * (a * b))) {
+	printf("first failure: mul_var_09\n");
+	RET(0);
+}
+
+extern long add_mul_imm_01(long, long);
+if (add_mul_imm_01(a, b) != ((0 + 0) * 0)) {
+	printf("first failure: add_mul_imm_01\n");
+	RET(0);
+}
+
+extern long add_mul_imm_02(long, long);
+if (add_mul_imm_02(a, b) != ((0 + 0) * 1)) {
+	printf("first failure: add_mul_imm_02\n");
+	RET(0);
+}
+
+extern long add_mul_imm_03(long, long);
+if (add_mul_imm_03(a, b) != ((5 + 0) * 0)) {
+	printf("first failure: add_mul_imm_03\n");
+	RET(0);
+}
+
+extern long add_mul_imm_04(long, long);
+if (add_mul_imm_04(a, b) != ((5 + 0) * 1)) {
+	printf("first failure: add_mul_imm_04\n");
+	RET(0);
+}
+
+extern long add_mul_imm_05(long, long);
+if (add_mul_imm_05(a, b) != ((5 + 0) * 10)) {
+	printf("first failure: add_mul_imm_05\n");
+	RET(0);
+}
+
+extern long add_mul_imm_06(long, long);
+if (add_mul_imm_06(a, b) != ((5 + 10) * 20)) {
+	printf("first failure: add_mul_imm_06\n");
+	RET(0);
+}
+
+extern long add_mul_imm_07(long, long);
+if (add_mul_imm_07(a, b) != (0 + (0 * 0))) {
+	printf("first failure: add_mul_imm_07\n");
+	RET(0);
+}
+
+extern long add_mul_imm_08(long, long);
+if (add_mul_imm_08(a, b) != (0 + (1 * 1))) {
+	printf("first failure: add_mul_imm_08\n");
+	RET(0);
+}
+
+extern long add_mul_imm_09(long, long);
+if (add_mul_imm_09(a, b) != (5 + (0 * 0))) {
+	printf("first failure: add_mul_imm_09\n");
+	RET(0);
+}
+
+extern long add_mul_imm_10(long, long);
+if (add_mul_imm_10(a, b) != (5 + (1 * 1))) {
+	printf("first failure: add_mul_imm_10\n");
+	RET(0);
+}
+
+extern long add_mul_imm_11(long, long);
+if (add_mul_imm_11(a, b) != (5 + (10 * 20))) {
+	printf("first failure: add_mul_imm_11\n");
+	RET(0);
+}
+
+extern long add_mul_imm_12(long, long);
+if (add_mul_imm_12(a, b) != ((5 * 10) + 20 + 30)) {
+	printf("first failure: add_mul_imm_12\n");
+	RET(0);
+}
+
+extern long add_mul_imm_13(long, long);
+if (add_mul_imm_13(a, b) != (5 + (10 * 20) + 30)) {
+	printf("first failure: add_mul_imm_13\n");
+	RET(0);
+}
+
+extern long add_mul_imm_14(long, long);
+if (add_mul_imm_14(a, b) != (5 + 10 + (20 * 30))) {
+	printf("first failure: add_mul_imm_14\n");
+	RET(0);
+}
+
+extern long add_mul_imm_15(long, long);
+if (add_mul_imm_15(a, b) != ((5 + 10) * 20 * 30)) {
+	printf("first failure: add_mul_imm_15\n");
+	RET(0);
+}
+
+extern long add_mul_imm_16(long, long);
+if (add_mul_imm_16(a, b) != (5 * (10 + 20) * 30)) {
+	printf("first failure: add_mul_imm_16\n");
+	RET(0);
+}
+
+extern long add_mul_imm_17(long, long);
+if (add_mul_imm_17(a, b) != (5 * 10 * (20 + 30))) {
+	printf("first failure: add_mul_imm_17\n");
+	RET(0);
+}
+
+extern long add_mul_01(long, long);
+if (add_mul_01(a, b) != ((a + 0) * 0)) {
+	printf("first failure: add_mul_01\n");
+	RET(0);
+}
+
+extern long add_mul_02(long, long);
+if (add_mul_02(a, b) != (a + (0 * 0))) {
+	printf("first failure: add_mul_02\n");
+	RET(0);
+}
+
+extern long add_mul_03(long, long);
+if (add_mul_03(a, b) != ((a + 0) * 1)) {
+	printf("first failure: add_mul_03\n");
+	RET(0);
+}
+
+extern long add_mul_04(long, long);
+if (add_mul_04(a, b) != (a + (0 * 1))) {
+	printf("first failure: add_mul_04\n");
+	RET(0);
+}
+
+extern long add_mul_05(long, long);
+if (add_mul_05(a, b) != ((a + 0) * 2)) {
+	printf("first failure: add_mul_05\n");
+	RET(0);
+}
+
+extern long add_mul_06(long, long);
+if (add_mul_06(a, b) != (2 * (a + 0))) {
+	printf("first failure: add_mul_06\n");
+	RET(0);
+}
+
+extern long add_mul_07(long, long);
+if (add_mul_07(a, b) != ((a + 0) * 4)) {
+	printf("first failure: add_mul_07\n");
+	RET(0);
+}
+
+extern long add_mul_08(long, long);
+if (add_mul_08(a, b) != (4 * (a + 0))) {
+	printf("first failure: add_mul_08\n");
+	RET(0);
+}
+
+extern long add_mul_09(long, long);
+if (add_mul_09(a, b) != ((a + 0) * 8)) {
+	printf("first failure: add_mul_09\n");
+	RET(0);
+}
+
+extern long add_mul_10(long, long);
+if (add_mul_10(a, b) != (8 * (a + 0))) {
+	printf("first failure: add_mul_10\n");
+	RET(0);
+}
+
+extern long add_mul_11(long, long);
+if (add_mul_11(a, b) != ((a + 5) * 0)) {
+	printf("first failure: add_mul_11\n");
+	RET(0);
+}
+
+extern long add_mul_12(long, long);
+if (add_mul_12(a, b) != ((a + 5) * 1)) {
+	printf("first failure: add_mul_12\n");
+	RET(0);
+}
+
+extern long add_mul_13(long, long);
+if (add_mul_13(a, b) != ((a + 5) * 2)) {
+	printf("first failure: add_mul_13\n");
+	RET(0);
+}
+
+extern long add_mul_14(long, long);
+if (add_mul_14(a, b) != ((a + 5) * 4)) {
+	printf("first failure: add_mul_14\n");
+	RET(0);
+}
+
+extern long add_mul_15(long, long);
+if (add_mul_15(a, b) != ((a + 5) * 8)) {
+	printf("first failure: add_mul_15\n");
+	RET(0);
+}
+
+extern long add_mul_16(long, long);
+if (add_mul_16(a, b) != ((a + b) * 0)) {
+	printf("first failure: add_mul_16\n");
+	RET(0);
+}
+
+extern long add_mul_17(long, long);
+if (add_mul_17(a, b) != ((a + b) * 1)) {
+	printf("first failure: add_mul_17\n");
+	RET(0);
+}
+
+extern long add_mul_18(long, long);
+if (add_mul_18(a, b) != (0 * (a + 5))) {
+	printf("first failure: add_mul_18\n");
+	RET(0);
+}
+
+extern long add_mul_19(long, long);
+if (add_mul_19(a, b) != (1 * (a + 5))) {
+	printf("first failure: add_mul_19\n");
+	RET(0);
+}
+
+extern long add_mul_20(long, long);
+if (add_mul_20(a, b) != (2 * (a + 5))) {
+	printf("first failure: add_mul_20\n");
+	RET(0);
+}
+
+extern long add_mul_21(long, long);
+if (add_mul_21(a, b) != (4 * (a + 5))) {
+	printf("first failure: add_mul_21\n");
+	RET(0);
+}
+
+extern long add_mul_22(long, long);
+if (add_mul_22(a, b) != (8 * (a + 5))) {
+	printf("first failure: add_mul_22\n");
+	RET(0);
+}
+
+extern long add_mul_23(long, long);
+if (add_mul_23(a, b) != (0 * (a + b))) {
+	printf("first failure: add_mul_23\n");
+	RET(0);
+}
+
+extern long add_mul_24(long, long);
+if (add_mul_24(a, b) != (1 * (a + b))) {
+	printf("first failure: add_mul_24\n");
+	RET(0);
+}
+
+extern long add_mul_25(long, long);
+if (add_mul_25(a, b) != ((a + 5) * 0 * 0)) {
+	printf("first failure: add_mul_25\n");
+	RET(0);
+}
+
+extern long add_mul_26(long, long);
+if (add_mul_26(a, b) != (0 * (a + 5) * 0)) {
+	printf("first failure: add_mul_26\n");
+	RET(0);
+}
+
+extern long add_mul_27(long, long);
+if (add_mul_27(a, b) != (0 * 0 * (a + 5))) {
+	printf("first failure: add_mul_27\n");
+	RET(0);
+}
+
+extern long add_mul_28(long, long);
+if (add_mul_28(a, b) != ((a + 5) * 1 * 1)) {
+	printf("first failure: add_mul_28\n");
+	RET(0);
+}
+
+extern long add_mul_29(long, long);
+if (add_mul_29(a, b) != (1 * (a + 5) * 1)) {
+	printf("first failure: add_mul_29\n");
+	RET(0);
+}
+
+extern long add_mul_30(long, long);
+if (add_mul_30(a, b) != (1 * 1 * (a + 5))) {
+	printf("first failure: add_mul_30\n");
+	RET(0);
+}
+
+extern long add_mul_31(long, long);
+if (add_mul_31(a, b) != ((a + 5) * 2 * 1)) {
+	printf("first failure: add_mul_31\n");
+	RET(0);
+}
+
+extern long add_mul_32(long, long);
+if (add_mul_32(a, b) != (2 * (a + 5) * 1)) {
+	printf("first failure: add_mul_32\n");
+	RET(0);
+}
+
+extern long add_mul_33(long, long);
+if (add_mul_33(a, b) != (2 * 1 * (a + 5))) {
+	printf("first failure: add_mul_33\n");
+	RET(0);
+}
+
+extern long add_mul_34(long, long);
+if (add_mul_34(a, b) != ((a + 5) * 4 * 1)) {
+	printf("first failure: add_mul_34\n");
+	RET(0);
+}
+
+extern long add_mul_35(long, long);
+if (add_mul_35(a, b) != (4 * (a + 5) * 1)) {
+	printf("first failure: add_mul_35\n");
+	RET(0);
+}
+
+extern long add_mul_36(long, long);
+if (add_mul_36(a, b) != (4 * 1 * (a + 5))) {
+	printf("first failure: add_mul_36\n");
+	RET(0);
+}
+
+extern long add_mul_37(long, long);
+if (add_mul_37(a, b) != ((a + 5) * 8 * 1)) {
+	printf("first failure: add_mul_37\n");
+	RET(0);
+}
+
+extern long add_mul_38(long, long);
+if (add_mul_38(a, b) != (8 * (a + 5) * 1)) {
+	printf("first failure: add_mul_38\n");
+	RET(0);
+}
+
+extern long add_mul_39(long, long);
+if (add_mul_39(a, b) != (8 * 1 * (a + 5))) {
+	printf("first failure: add_mul_39\n");
+	RET(0);
+}
+
+extern long add_mul_40(long, long);
+if (add_mul_40(a, b) != ((a + 5) * 2 * 2)) {
+	printf("first failure: add_mul_40\n");
+	RET(0);
+}
+
+extern long add_mul_41(long, long);
+if (add_mul_41(a, b) != (2 * (a + 5) * 2)) {
+	printf("first failure: add_mul_41\n");
+	RET(0);
+}
+
+extern long add_mul_42(long, long);
+if (add_mul_42(a, b) != (2 * 2 * (a + 5))) {
+	printf("first failure: add_mul_42\n");
+	RET(0);
+}
+
+extern long add_mul_43(long, long);
+if (add_mul_43(a, b) != ((a + 5) * 2 * 4)) {
+	printf("first failure: add_mul_43\n");
+	RET(0);
+}
+
+extern long add_mul_44(long, long);
+if (add_mul_44(a, b) != (2 * (a + 5) * 4)) {
+	printf("first failure: add_mul_44\n");
+	RET(0);
+}
+
+extern long add_mul_45(long, long);
+if (add_mul_45(a, b) != (2 * 4 * (a + 5))) {
+	printf("first failure: add_mul_45\n");
+	RET(0);
+}
+
+extern long mul_add_01(long, long);
+if (mul_add_01(a, b) != ((a * 0) + 0)) {
+	printf("first failure: mul_add_01\n");
+	RET(0);
+}
+
+extern long mul_add_02(long, long);
+if (mul_add_02(a, b) != (a * (0 + 0))) {
+	printf("first failure: mul_add_02\n");
+	RET(0);
+}
+
+extern long mul_add_03(long, long);
+if (mul_add_03(a, b) != ((a * 0) + 1)) {
+	printf("first failure: mul_add_03\n");
+	RET(0);
+}
+
+extern long mul_add_04(long, long);
+if (mul_add_04(a, b) != (a * (0 + 1))) {
+	printf("first failure: mul_add_04\n");
+	RET(0);
+}
+
+extern long mul_add_05(long, long);
+if (mul_add_05(a, b) != ((a * 1) + 0)) {
+	printf("first failure: mul_add_05\n");
+	RET(0);
+}
+
+extern long mul_add_06(long, long);
+if (mul_add_06(a, b) != (0 + (a * 1))) {
+	printf("first failure: mul_add_06\n");
+	RET(0);
+}
+
+extern long mul_add_07(long, long);
+if (mul_add_07(a, b) != ((a * 2) + 0)) {
+	printf("first failure: mul_add_07\n");
+	RET(0);
+}
+
+extern long mul_add_08(long, long);
+if (mul_add_08(a, b) != (0 + (a * 2))) {
+	printf("first failure: mul_add_08\n");
+	RET(0);
+}
+
+extern long mul_add_09(long, long);
+if (mul_add_09(a, b) != ((a * 4) + 0)) {
+	printf("first failure: mul_add_09\n");
+	RET(0);
+}
+
+extern long mul_add_10(long, long);
+if (mul_add_10(a, b) != (0 + (a * 4))) {
+	printf("first failure: mul_add_10\n");
+	RET(0);
+}
+
+extern long mul_add_11(long, long);
+if (mul_add_11(a, b) != ((a * 8) + 0)) {
+	printf("first failure: mul_add_11\n");
+	RET(0);
+}
+
+extern long mul_add_12(long, long);
+if (mul_add_12(a, b) != (0 + (a * 8))) {
+	printf("first failure: mul_add_12\n");
+	RET(0);
+}
+
+extern long mul_add_13(long, long);
+if (mul_add_13(a, b) != (a + (b * 1))) {
+	printf("first failure: mul_add_13\n");
+	RET(0);
+}
+
+extern long mul_add_14(long, long);
+if (mul_add_14(a, b) != ((a * 1) + b)) {
+	printf("first failure: mul_add_14\n");
+	RET(0);
+}
+
+extern long mul_add_15(long, long);
+if (mul_add_15(a, b) != (a + (b * 2))) {
+	printf("first failure: mul_add_15\n");
+	RET(0);
+}
+
+extern long mul_add_16(long, long);
+if (mul_add_16(a, b) != ((a * 2) + b)) {
+	printf("first failure: mul_add_16\n");
+	RET(0);
+}
+
+extern long mul_add_17(long, long);
+if (mul_add_17(a, b) != (a + (b * 4))) {
+	printf("first failure: mul_add_17\n");
+	RET(0);
+}
+
+extern long mul_add_18(long, long);
+if (mul_add_18(a, b) != ((a * 4) + b)) {
+	printf("first failure: mul_add_18\n");
+	RET(0);
+}
+
+extern long mul_add_19(long, long);
+if (mul_add_19(a, b) != (a + (b * 8))) {
+	printf("first failure: mul_add_19\n");
+	RET(0);
+}
+
+extern long mul_add_20(long, long);
+if (mul_add_20(a, b) != ((a * 8) + b)) {
+	printf("first failure: mul_add_20\n");
+	RET(0);
+}
+
+extern long mul_add_21(long, long);
+if (mul_add_21(a, b) != (a + (1 * (b + 5)))) {
+	printf("first failure: mul_add_21\n");
+	RET(0);
+}
+
+extern long mul_add_22(long, long);
+if (mul_add_22(a, b) != (a + ((b + 5) * 1))) {
+	printf("first failure: mul_add_22\n");
+	RET(0);
+}
+
+extern long mul_add_23(long, long);
+if (mul_add_23(a, b) != ((1 * (b + 5)) + a)) {
+	printf("first failure: mul_add_23\n");
+	RET(0);
+}
+
+extern long mul_add_24(long, long);
+if (mul_add_24(a, b) != (((b + 5) * 1) + a)) {
+	printf("first failure: mul_add_24\n");
+	RET(0);
+}
+
+extern long mul_add_25(long, long);
+if (mul_add_25(a, b) != (a + (2 * (b + 5)))) {
+	printf("first failure: mul_add_25\n");
+	RET(0);
+}
+
+extern long mul_add_26(long, long);
+if (mul_add_26(a, b) != (a + ((b + 5) * 2))) {
+	printf("first failure: mul_add_26\n");
+	RET(0);
+}
+
+extern long mul_add_27(long, long);
+if (mul_add_27(a, b) != ((2 * (b + 5)) + a)) {
+	printf("first failure: mul_add_27\n");
+	RET(0);
+}
+
+extern long mul_add_28(long, long);
+if (mul_add_28(a, b) != (((b + 5) * 2) + a)) {
+	printf("first failure: mul_add_28\n");
+	RET(0);
+}
+
+extern long mul_add_29(long, long);
+if (mul_add_29(a, b) != (a + (4 * (b + 5)))) {
+	printf("first failure: mul_add_29\n");
+	RET(0);
+}
+
+extern long mul_add_30(long, long);
+if (mul_add_30(a, b) != (a + ((b + 5) * 4))) {
+	printf("first failure: mul_add_30\n");
+	RET(0);
+}
+
+extern long mul_add_31(long, long);
+if (mul_add_31(a, b) != ((4 * (b + 5)) + a)) {
+	printf("first failure: mul_add_31\n");
+	RET(0);
+}
+
+extern long mul_add_32(long, long);
+if (mul_add_32(a, b) != (((b + 5) * 4) + a)) {
+	printf("first failure: mul_add_32\n");
+	RET(0);
+}
+
+extern long mul_add_33(long, long);
+if (mul_add_33(a, b) != (a + (8 * (b + 5)))) {
+	printf("first failure: mul_add_33\n");
+	RET(0);
+}
+
+extern long mul_add_34(long, long);
+if (mul_add_34(a, b) != (a + ((b + 5) * 8))) {
+	printf("first failure: mul_add_34\n");
+	RET(0);
+}
+
+extern long mul_add_35(long, long);
+if (mul_add_35(a, b) != ((8 * (b + 5)) + a)) {
+	printf("first failure: mul_add_35\n");
+	RET(0);
+}
+
+extern long mul_add_36(long, long);
+if (mul_add_36(a, b) != (((b + 5) * 8) + a)) {
+	printf("first failure: mul_add_36\n");
+	RET(0);
+}
+
+RET(1);

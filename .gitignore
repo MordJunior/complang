@@ -3,3 +3,5 @@ generated_test_*.0
 __pycache__
 UebersetzerbauGenerator.py
 out
+*.o
+*.S

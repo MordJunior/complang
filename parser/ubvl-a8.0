@@ -1,0 +1,1 @@
+x():int if x=x then return x; end; end;
