@@ -1,0 +1,7 @@
+foo(a: int) : int
+    if a = 0 or a = 1 then
+        return 1;
+    end;
+
+    return 0;
+end;
