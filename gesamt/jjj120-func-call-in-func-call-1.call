@@ -1,0 +1,31 @@
+extern long foo(long a, long b, long c);
+
+long check(long a, long b, long c)
+{
+    return (a + b) * c;
+}
+
+#define MAX_VAL 100
+#define MIN_VAL -100
+
+int result = 0;
+for (long i = MIN_VAL; i < MAX_VAL; i++)
+{
+    for (long j = MIN_VAL; j < MAX_VAL; j++)
+    {
+        for (long k = MIN_VAL; k < MAX_VAL; k++)
+        {
+            if (foo(i, j, k) != check(i, j, k))
+            {
+                result = 1;
+                break;
+            }
+        }
+        if (result)
+            break;
+    }
+    if (result)
+        break;
+}
+
+RET(result == 0);

@@ -1,0 +1,11 @@
+add(x: int, y: int): int
+    return x + y;
+end;
+
+mul(x: int, y: int): int 
+    return x * y;
+end;
+
+foo(a: int, b: int, c: int): int 
+    return add(mul(add(a, b), c), a);
+end;
