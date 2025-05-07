@@ -1,0 +1,752 @@
+ret_imm_01(a : int, b : int) : int
+  return 0xFFa;
+end;
+
+add_imm_01(a : int, b : int) : int
+  return 0 + 0;
+end;
+
+add_imm_02(a : int, b : int) : int
+  return 0 + 5;
+end;
+
+add_imm_03(a : int, b : int) : int
+  return 5 + 10 + 20;
+end;
+
+add_imm_04(a : int, b : int) : int
+  return 5 + 10 + 20 + 30;
+end;
+
+add_imm_05(a : int, b : int) : int
+  return 0 + a;
+end;
+
+add_imm_06(a : int, b : int) : int
+  return a + 0;
+end;
+
+add_imm_07(a : int, b : int) : int
+  return a + 0 + 0;
+end;
+
+add_imm_08(a : int, b : int) : int
+  return 0 + a + 0;
+end;
+
+add_imm_09(a : int, b : int) : int
+  return 0 + 0 + a;
+end;
+
+add_imm_10(a : int, b : int) : int
+  return (0);
+end;
+
+add_imm_11(a : int, b : int) : int
+  return (0 + 5);
+end;
+
+add_imm_12(a : int, b : int) : int
+  return (5 + 10) + 20;
+end;
+
+add_imm_13(a : int, b : int) : int
+  return 5 + (10 + 20);
+end;
+
+add_imm_14(a : int, b : int) : int
+  return (0 + a);
+end;
+
+add_imm_15(a : int, b : int) : int
+  return (a + 0);
+end;
+
+add_imm_16(a : int, b : int) : int
+  return (a + 0) + 0;
+end;
+
+add_imm_17(a : int, b : int) : int
+  return a + (0 + 0);
+end;
+
+add_imm_18(a : int, b : int) : int
+  return (0 + a) + 0;
+end;
+
+add_imm_19(a : int, b : int) : int
+  return 0 + (a + 0);
+end;
+
+add_imm_20(a : int, b : int) : int
+  return (0 + 0) + a;
+end;
+
+add_imm_21(a : int, b : int) : int
+  return 0 + (0 + a);
+end;
+
+add_var_01(a : int, b : int) : int
+  return a + b;
+end;
+
+add_var_02(a : int, b : int) : int
+  return a + b + 0;
+end;
+
+add_var_03(a : int, b : int) : int
+  return a + 0 + b;
+end;
+
+add_var_04(a : int, b : int) : int
+  return 0 + a + b;
+end;
+
+add_var_05(a : int, b : int) : int
+  return a + b + 10;
+end;
+
+add_var_06(a : int, b : int) : int
+  return a + 10 + b;
+end;
+
+add_var_07(a : int, b : int) : int
+  return 10 + a + b;
+end;
+
+add_var_08(a : int, b : int) : int
+  return (a + b) + 0;
+end;
+
+add_var_09(a : int, b : int) : int
+  return a + (b + 0);
+end;
+
+add_var_10(a : int, b : int) : int
+  return (a + 0) + b;
+end;
+
+add_var_11(a : int, b : int) : int
+  return a + (0 + b);
+end;
+
+add_var_12(a : int, b : int) : int
+  return (0 + a) + b;
+end;
+
+add_var_13(a : int, b : int) : int
+  return 0 + (a + b);
+end;
+
+add_var_14(a : int, b : int) : int
+  return (a + b) + 10;
+end;
+
+add_var_15(a : int, b : int) : int
+  return a + (b + 10);
+end;
+
+add_var_16(a : int, b : int) : int
+  return (a + 10) + b;
+end;
+
+add_var_17(a : int, b : int) : int
+  return a + (10 + b);
+end;
+
+add_var_18(a : int, b : int) : int
+  return (10 + a) + b;
+end;
+
+add_var_19(a : int, b : int) : int
+  return 10 + (a + b);
+end;
+
+sub_imm_01(a : int, b : int) : int
+  return 0 - 0;
+end;
+
+sub_imm_02(a : int, b : int) : int
+  return 5 - 0;
+end;
+
+sub_imm_03(a : int, b : int) : int
+  return 0 - 5;
+end;
+
+sub_imm_04(a : int, b : int) : int
+  return (20 - 10) - 5;
+end;
+
+sub_imm_05(a : int, b : int) : int
+  return 20 - (10 - 5);
+end;
+
+sub_imm_06(a : int, b : int) : int
+  return a - 0;
+end;
+
+sub_imm_07(a : int, b : int) : int
+  return (a - 0) - 0;
+end;
+
+sub_imm_08(a : int, b : int) : int
+  return a - (0 - 0);
+end;
+
+sub_var_01(a : int, b : int) : int
+  return a - a;
+end;
+
+sub_var_02(a : int, b : int) : int
+  return (a - a) - 0;
+end;
+
+sub_var_03(a : int, b : int) : int
+  return a - (a - 0);
+end;
+
+mul_imm_01(a : int, b : int) : int
+  return 0 * 5;
+end;
+
+mul_imm_02(a : int, b : int) : int
+  return 1 * 5;
+end;
+
+mul_imm_03(a : int, b : int) : int
+  return 0 * 5 * 10;
+end;
+
+mul_imm_04(a : int, b : int) : int
+  return 1 * 5 * 10;
+end;
+
+mul_imm_06(a : int, b : int) : int
+  return 5 * 10 * 20;
+end;
+
+mul_imm_07(a : int, b : int) : int
+  return 5 * 10 * 20 * 30;
+end;
+
+mul_imm_08(a : int, b : int) : int
+  return a * 0;
+end;
+
+mul_imm_09(a : int, b : int) : int
+  return a * 1;
+end;
+
+mul_imm_10(a : int, b : int) : int
+  return a * 0 * 0;
+end;
+
+mul_imm_11(a : int, b : int) : int
+  return 0 * a * 0;
+end;
+
+mul_imm_12(a : int, b : int) : int
+  return 0 * 0 * a;
+end;
+
+mul_imm_13(a : int, b : int) : int
+  return a * 1 * 1;
+end;
+
+mul_imm_14(a : int, b : int) : int
+  return 1 * a * 1;
+end;
+
+mul_imm_15(a : int, b : int) : int
+  return 1 * 1 * a;
+end;
+
+mul_imm_16(a : int, b : int) : int
+  return (a * 0) * 0;
+end;
+
+mul_imm_17(a : int, b : int) : int
+  return a * (0 * 0);
+end;
+
+mul_imm_18(a : int, b : int) : int
+  return (0 * a) * 0;
+end;
+
+mul_imm_19(a : int, b : int) : int
+  return 0 * (a * 0);
+end;
+
+mul_imm_20(a : int, b : int) : int
+  return (0 * 0) * a;
+end;
+
+mul_imm_21(a : int, b : int) : int
+  return 0 * (0 * a);
+end;
+
+mul_imm_22(a : int, b : int) : int
+  return (a * 1) * 1;
+end;
+
+mul_imm_23(a : int, b : int) : int
+  return a * (1 * 1);
+end;
+
+mul_imm_24(a : int, b : int) : int
+  return (1 * a) * 1;
+end;
+
+mul_imm_25(a : int, b : int) : int
+  return 1 * (a * 1);
+end;
+
+mul_imm_26(a : int, b : int) : int
+  return (1 * 1) * a;
+end;
+
+mul_imm_27(a : int, b : int) : int
+  return 1 * (1 * a);
+end;
+
+mul_imm_28(a : int, b : int) : int
+  return a * 2;
+end;
+
+mul_imm_29(a : int, b : int) : int
+  return a * 4;
+end;
+
+mul_imm_30(a : int, b : int) : int
+  return a * 8;
+end;
+
+mul_var_01(a : int, b : int) : int
+  return a * b * 0;
+end;
+
+mul_var_02(a : int, b : int) : int
+  return a * 0 * b;
+end;
+
+mul_var_03(a : int, b : int) : int
+  return 0 * a * b;
+end;
+
+mul_var_04(a : int, b : int) : int
+  return (a * b) * 0;
+end;
+
+mul_var_05(a : int, b : int) : int
+  return a * (b * 0);
+end;
+
+mul_var_06(a : int, b : int) : int
+  return (a * 0) * b;
+end;
+
+mul_var_07(a : int, b : int) : int
+  return a * (0 * b);
+end;
+
+mul_var_08(a : int, b : int) : int
+  return (0 * a) * b;
+end;
+
+mul_var_09(a : int, b : int) : int
+  return 0 * (a * b);
+end;
+
+add_mul_imm_01(a : int, b : int) : int
+  return (0 + 0) * 0;
+end;
+
+add_mul_imm_02(a : int, b : int) : int
+  return (0 + 0) * 1;
+end;
+
+add_mul_imm_03(a : int, b : int) : int
+  return (5 + 0) * 0;
+end;
+
+add_mul_imm_04(a : int, b : int) : int
+  return (5 + 0) * 1;
+end;
+
+add_mul_imm_05(a : int, b : int) : int
+  return (5 + 0) * 10;
+end;
+
+add_mul_imm_06(a : int, b : int) : int
+  return (5 + 10) * 20;
+end;
+
+add_mul_imm_07(a : int, b : int) : int
+  return 0 + (0 * 0);
+end;
+
+add_mul_imm_08(a : int, b : int) : int
+  return 0 + (1 * 1);
+end;
+
+add_mul_imm_09(a : int, b : int) : int
+  return 5 + (0 * 0);
+end;
+
+add_mul_imm_10(a : int, b : int) : int
+  return 5 + (1 * 1);
+end;
+
+add_mul_imm_11(a : int, b : int) : int
+  return 5 + (10 * 20);
+end;
+
+add_mul_imm_12(a : int, b : int) : int
+  return (5 * 10) + 20 + 30;
+end;
+
+add_mul_imm_13(a : int, b : int) : int
+  return 5 + (10 * 20) + 30;
+end;
+
+add_mul_imm_14(a : int, b : int) : int
+  return 5 + 10 + (20 * 30);
+end;
+
+add_mul_imm_15(a : int, b : int) : int
+  return (5 + 10) * 20 * 30;
+end;
+
+add_mul_imm_16(a : int, b : int) : int
+  return 5 * (10 + 20) * 30;
+end;
+
+add_mul_imm_17(a : int, b : int) : int
+  return 5 * 10 * (20 + 30);
+end;
+
+add_mul_01(a : int, b : int) : int
+  return (a + 0) * 0;
+end;
+
+add_mul_02(a : int, b : int) : int
+  return a + (0 * 0);
+end;
+
+add_mul_03(a : int, b : int) : int
+  return (a + 0) * 1;
+end;
+
+add_mul_04(a : int, b : int) : int
+  return a + (0 * 1);
+end;
+
+add_mul_05(a : int, b : int) : int
+  return (a + 0) * 2;
+end;
+
+add_mul_06(a : int, b : int) : int
+  return 2 * (a + 0);
+end;
+
+add_mul_07(a : int, b : int) : int
+  return (a + 0) * 4;
+end;
+
+add_mul_08(a : int, b : int) : int
+  return 4 * (a + 0);
+end;
+
+add_mul_09(a : int, b : int) : int
+  return (a + 0) * 8;
+end;
+
+add_mul_10(a : int, b : int) : int
+  return 8 * (a + 0);
+end;
+
+add_mul_11(a : int, b : int) : int
+  return (a + 5) * 0;
+end;
+
+add_mul_12(a : int, b : int) : int
+  return (a + 5) * 1;
+end;
+
+add_mul_13(a : int, b : int) : int
+  return (a + 5) * 2;
+end;
+
+add_mul_14(a : int, b : int) : int
+  return (a + 5) * 4;
+end;
+
+add_mul_15(a : int, b : int) : int
+  return (a + 5) * 8;
+end;
+
+add_mul_16(a : int, b : int) : int
+  return (a + b) * 0;
+end;
+
+add_mul_17(a : int, b : int) : int
+  return (a + b) * 1;
+end;
+
+add_mul_18(a : int, b : int) : int
+  return 0 * (a + 5);
+end;
+
+add_mul_19(a : int, b : int) : int
+  return 1 * (a + 5);
+end;
+
+add_mul_20(a : int, b : int) : int
+  return 2 * (a + 5);
+end;
+
+add_mul_21(a : int, b : int) : int
+  return 4 * (a + 5);
+end;
+
+add_mul_22(a : int, b : int) : int
+  return 8 * (a + 5);
+end;
+
+add_mul_23(a : int, b : int) : int
+  return 0 * (a + b);
+end;
+
+add_mul_24(a : int, b : int) : int
+  return 1 * (a + b);
+end;
+
+add_mul_25(a : int, b : int) : int
+  return (a + 5) * 0 * 0;
+end;
+
+add_mul_26(a : int, b : int) : int
+  return 0 * (a + 5) * 0;
+end;
+
+add_mul_27(a : int, b : int) : int
+  return 0 * 0 * (a + 5);
+end;
+
+add_mul_28(a : int, b : int) : int
+  return (a + 5) * 1 * 1;
+end;
+
+add_mul_29(a : int, b : int) : int
+  return 1 * (a + 5) * 1;
+end;
+
+add_mul_30(a : int, b : int) : int
+  return 1 * 1 * (a + 5);
+end;
+
+add_mul_31(a : int, b : int) : int
+  return (a + 5) * 2 * 1;
+end;
+
+add_mul_32(a : int, b : int) : int
+  return 2 * (a + 5) * 1;
+end;
+
+add_mul_33(a : int, b : int) : int
+  return 2 * 1 * (a + 5);
+end;
+
+add_mul_34(a : int, b : int) : int
+  return (a + 5) * 4 * 1;
+end;
+
+add_mul_35(a : int, b : int) : int
+  return 4 * (a + 5) * 1;
+end;
+
+add_mul_36(a : int, b : int) : int
+  return 4 * 1 * (a + 5);
+end;
+
+add_mul_37(a : int, b : int) : int
+  return (a + 5) * 8 * 1;
+end;
+
+add_mul_38(a : int, b : int) : int
+  return 8 * (a + 5) * 1;
+end;
+
+add_mul_39(a : int, b : int) : int
+  return 8 * 1 * (a + 5);
+end;
+
+add_mul_40(a : int, b : int) : int
+  return (a + 5) * 2 * 2;
+end;
+
+add_mul_41(a : int, b : int) : int
+  return 2 * (a + 5) * 2;
+end;
+
+add_mul_42(a : int, b : int) : int
+  return 2 * 2 * (a + 5);
+end;
+
+add_mul_43(a : int, b : int) : int
+  return (a + 5) * 2 * 4;
+end;
+
+add_mul_44(a : int, b : int) : int
+  return 2 * (a + 5) * 4;
+end;
+
+add_mul_45(a : int, b : int) : int
+  return 2 * 4 * (a + 5);
+end;
+
+mul_add_01(a : int, b : int) : int
+  return (a * 0) + 0;
+end;
+
+mul_add_02(a : int, b : int) : int
+  return a * (0 + 0);
+end;
+
+mul_add_03(a : int, b : int) : int
+  return (a * 0) + 1;
+end;
+
+mul_add_04(a : int, b : int) : int
+  return a * (0 + 1);
+end;
+
+mul_add_05(a : int, b : int) : int
+  return (a * 1) + 0;
+end;
+
+mul_add_06(a : int, b : int) : int
+  return 0 + (a * 1);
+end;
+
+mul_add_07(a : int, b : int) : int
+  return (a * 2) + 0;
+end;
+
+mul_add_08(a : int, b : int) : int
+  return 0 + (a * 2);
+end;
+
+mul_add_09(a : int, b : int) : int
+  return (a * 4) + 0;
+end;
+
+mul_add_10(a : int, b : int) : int
+  return 0 + (a * 4);
+end;
+
+mul_add_11(a : int, b : int) : int
+  return (a * 8) + 0;
+end;
+
+mul_add_12(a : int, b : int) : int
+  return 0 + (a * 8);
+end;
+
+mul_add_13(a : int, b : int) : int
+  return a + (b * 1);
+end;
+
+mul_add_14(a : int, b : int) : int
+  return (a * 1) + b;
+end;
+
+mul_add_15(a : int, b : int) : int
+  return a + (b * 2);
+end;
+
+mul_add_16(a : int, b : int) : int
+  return (a * 2) + b;
+end;
+
+mul_add_17(a : int, b : int) : int
+  return a + (b * 4);
+end;
+
+mul_add_18(a : int, b : int) : int
+  return (a * 4) + b;
+end;
+
+mul_add_19(a : int, b : int) : int
+  return a + (b * 8);
+end;
+
+mul_add_20(a : int, b : int) : int
+  return (a * 8) + b;
+end;
+
+mul_add_21(a : int, b : int) : int
+  return a + (1 * (b + 5));
+end;
+
+mul_add_22(a : int, b : int) : int
+  return a + ((b + 5) * 1);
+end;
+
+mul_add_23(a : int, b : int) : int
+  return (1 * (b + 5)) + a;
+end;
+
+mul_add_24(a : int, b : int) : int
+  return ((b + 5) * 1) + a;
+end;
+
+mul_add_25(a : int, b : int) : int
+  return a + (2 * (b + 5));
+end;
+
+mul_add_26(a : int, b : int) : int
+  return a + ((b + 5) * 2);
+end;
+
+mul_add_27(a : int, b : int) : int
+  return (2 * (b + 5)) + a;
+end;
+
+mul_add_28(a : int, b : int) : int
+  return ((b + 5) * 2) + a;
+end;
+
+mul_add_29(a : int, b : int) : int
+  return a + (4 * (b + 5));
+end;
+
+mul_add_30(a : int, b : int) : int
+  return a + ((b + 5) * 4);
+end;
+
+mul_add_31(a : int, b : int) : int
+  return (4 * (b + 5)) + a;
+end;
+
+mul_add_32(a : int, b : int) : int
+  return ((b + 5) * 4) + a;
+end;
+
+mul_add_33(a : int, b : int) : int
+  return a + (8 * (b + 5));
+end;
+
+mul_add_34(a : int, b : int) : int
+  return a + ((b + 5) * 8);
+end;
+
+mul_add_35(a : int, b : int) : int
+  return (8 * (b + 5)) + a;
+end;
+
+mul_add_36(a : int, b : int) : int
+  return ((b + 5) * 8) + a;
+end;
+
