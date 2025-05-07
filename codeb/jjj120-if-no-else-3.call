@@ -1,0 +1,2 @@
+extern long foo(long a, long b);
+RET(foo(0, 1) == 0 && foo(1, 1) == 1 && foo(101234, 101234) == 1 && foo(-101234, -101234) == 1);

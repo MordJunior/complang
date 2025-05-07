@@ -1,0 +1,3 @@
+extern long foo(long a, long b);
+
+RET(foo(1, 7) == 1);

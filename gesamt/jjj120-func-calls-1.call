@@ -1,0 +1,26 @@
+long abs_check(long a)
+{
+  return a < 0 ? -a : a;
+}
+
+extern long foo(long a, long b);
+
+int check(long a, long b)
+{
+  return abs_check(a - 1) + abs_check(b) == foo(a, b);
+}
+
+int ret_val = 0;
+for (long i = -100; i < 100; i++)
+{
+  for (long j = -100; j < 100; j++)
+  {
+    if (!check(i, j))
+    {
+      ret_val++;
+      fprintf(stderr, "foo(%ld, %ld) returned %ld, should be %ld\n", i, j, foo(i, j), abs_check(i - 1) + abs_check(j));
+    }
+  }
+}
+
+RET(ret_val == 0);

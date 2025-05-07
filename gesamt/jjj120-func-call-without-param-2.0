@@ -1,0 +1,15 @@
+foo(a: int, b: int) : int
+    return one() + two() + three();
+end;
+
+one(): int
+    return 1;
+end;
+
+two(): int
+    return 2;
+end;
+
+three(): int
+    return 3;
+end;

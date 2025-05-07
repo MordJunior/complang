@@ -1,0 +1,4 @@
+extern long foo(long a);
+// fprintf(stderr, "foo(0) returned %ld\n", foo(0));
+// fprintf(stderr, "foo(-42) returned %ld\n", foo(1234));
+RET(foo(0) == 1 && foo(1) == 1 && foo(1243) == 0);

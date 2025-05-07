@@ -1,0 +1,7 @@
+foo(a: int) : int
+    while a < 0 do
+        return 1;
+    end;
+
+    return 0;
+end;

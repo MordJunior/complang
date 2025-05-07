@@ -1,0 +1,5 @@
+foo(a: array of int, b: int) : int
+    var c: array of int := a;
+
+    return c[b];
+end;
