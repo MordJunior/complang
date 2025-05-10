@@ -1,0 +1,23 @@
+extern long foo(long a);
+
+long foo_check(long a)
+{
+    long i = 0;
+    while (0 < a)
+    {
+        i = i + 1;
+        a = a - 1;
+    }
+    return i;
+}
+
+for (long i = 0; i < 100; i++)
+{
+    if (foo(i) != foo_check(i))
+    {
+        printf("Error: %ld != %ld\n", foo(i), foo_check(i));
+        RET(foo(i) == foo_check(i));
+    }
+}
+
+RET(foo(i) == foo_check(i));
