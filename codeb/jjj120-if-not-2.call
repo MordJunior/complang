@@ -1,0 +1,30 @@
+extern long foo(int a, int b);
+long foo_check(int a, int b)
+{
+    if (!((!(a < 7 || b < 5)) || b == 42))
+    {
+        return 42;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int errors = 0;
+for (long a = 0; a < 100; a++)
+{
+    for (long b = 0; b < 100; b++)
+    {
+        if (foo(a, b) != foo_check(a, b))
+        {
+            errors++;
+            printf("Error: foo(%ld, %ld) = %ld, expected %ld\n", a, b, foo(a, b), foo_check(a, b));
+            break;
+        }
+    }
+    if (errors)
+        break;
+}
+
+RET(errors == 0);
