@@ -1,0 +1,4 @@
+foo(a: array of int, i: int, v: int): int
+    a[i] := v;
+    return a[i];
+end;
