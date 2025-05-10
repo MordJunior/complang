@@ -1,0 +1,5 @@
+foo(null_array: array of int): int
+    if 0 = 1 or (not (not (1 = 1 or null_array[42] = 0))) then
+    end;
+    return 1;
+end;
