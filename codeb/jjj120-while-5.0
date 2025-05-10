@@ -1,4 +1,4 @@
-foo(a: int) int:
+foo(a: int): int
     var i: int := 0;
     while 0 < a do
         i := i + 1;
