@@ -1,0 +1,6 @@
+foo(a: int, b: int): int
+    if not ( ( not ( a < 7 or b < 5 ) ) or b = 42 ) then
+        return 42;
+    end;
+    return 0;
+end;
