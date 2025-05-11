@@ -1,0 +1,4 @@
+foo(a: array of int): int
+    a[0] := 42;
+    return 1;
+end;

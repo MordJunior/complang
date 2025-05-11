@@ -1,0 +1,5 @@
+foo(): int
+    var x: int := 100;
+    x := 200;
+    return x;
+end;

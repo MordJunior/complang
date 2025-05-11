@@ -1,0 +1,12 @@
+extern long foo(long *a, long i, long v);
+long *a = calloc(100, sizeof(long));
+for (long i = 0; i < 100; i++)
+{
+    foo(a, i, i + 10);
+    if (a[i] != i + 10)
+    {
+        printf("Error: %ld != %ld\n", a[i], i + 10);
+        RET(a[i] == i + 10);
+    }
+}
+RET(a[99] == 99 + 10);
