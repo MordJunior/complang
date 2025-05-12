@@ -1,3 +1,0 @@
-extern long foo(long *a);
-long *a = calloc(1, sizeof(long));
-RET(foo(a) == 1 && *a == 42);

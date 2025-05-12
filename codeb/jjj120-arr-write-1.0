@@ -1,4 +1,4 @@
-foo(a: array of int, i: int, v: int): int
-    a[i] := v;
-    return a[i];
+foo(a: array of int): int
+    a[0] := 42;
+    return 1;
 end;
