@@ -7,5 +7,5 @@ mul(x: int, y: int): int
 end;
 
 foo(a: int, b: int, c: int): int
-    return add(mul(c, add(b, mul(a, add(c, mul(b, a))))), mul(c, add(b, mul(a, add(c, mul(b, a))))));
+    return mul(c, add(b, mul(a, add(c, mul(b, a))))) + mul(c, add(b, mul(a, add(c, mul(b, a)))));
 end;

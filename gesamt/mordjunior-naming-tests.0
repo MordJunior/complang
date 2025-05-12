@@ -1,0 +1,15 @@
+mod(a : int) : int
+  return a + 5;
+end;
+
+malloc(size : int) : array of int;
+
+create(n : int) : array of int
+  mod(n);
+  var i : int := 0;
+  var res : array of int := malloc(n * 8);
+  while i < n do
+    res[i] := mod(i + 15);
+    i := i + 1;
+  end;
+end;

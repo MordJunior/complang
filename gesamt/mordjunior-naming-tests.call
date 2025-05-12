@@ -1,0 +1,17 @@
+extern long mod(long a);
+extern long *create(long n);
+
+long *data = create(100);
+
+int failed = 0;
+
+for (int i = 0; i < 100; i++) {
+  if (data[i] != (i + 15) + 5) {
+      printf("[%d] error: element does not match. expected %li but got %li", i, (i + 15) + 5, data[i]);
+      failed++;
+    }
+}
+
+free(data);
+
+RET(failed == 0);
