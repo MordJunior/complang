@@ -12,4 +12,5 @@ create(n : int) : array of int
     res[i] := mod(i + 15);
     i := i + 1;
   end;
+  return 1;
 end;
