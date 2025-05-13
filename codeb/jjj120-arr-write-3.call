@@ -1,0 +1,7 @@
+extern long foo(long *a);
+long *a = calloc(100, sizeof(long));
+
+a[0] = 42;
+a[1] = 420;
+
+RET(foo(a) == 42 + 420 && a[0] == 42 + 420 && a[1] == 420);
