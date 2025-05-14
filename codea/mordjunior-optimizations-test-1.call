@@ -8,1322 +8,1134 @@ int failed = 0;
 // NOTE: RET(failed == 0) must be added manually at the end
 //
 // ^(\w+)[^;]*return\s+([^;]*);\s+end;\s+
-// extern long $1(long a, long b);\nresult = $1(a, b);\nif (result != ($2)) {\n\tfailed++;\n\tfprintf(stderr, "error: $1 did not return correctly. Expected %ld, but got %ld\\n", ($2), result);\n}\n\n
+// extern long $1(long a, long b);\nresult = $1(a, b);\nif (result != ($2)) {\n\tfprintf(stderr, "[%d] error: $1 did not return correctly. Expected %ld, but got %ld\\n", ++failed, ($2), result);\n}\n\n
 
 extern long ret_imm_01(long a, long b);
 result = ret_imm_01(a, b);
 if (result != (0xFFa)) {
-	failed++;
-	fprintf(stderr, "error: ret_imm_01 did not return correctly. Expected %ld, but got %ld\n", (0xFFa), result);
+	fprintf(stderr, "[%d] error: ret_imm_01 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0xFFa), result);
 }
 
 extern long add_imm_01(long a, long b);
 result = add_imm_01(a, b);
 if (result != (0 + 0)) {
-	failed++;
-	fprintf(stderr, "error: add_imm_01 did not return correctly. Expected %ld, but got %ld\n", (0 + 0), result);
+	fprintf(stderr, "[%d] error: add_imm_01 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 + 0), result);
 }
 
 extern long add_imm_02(long a, long b);
 result = add_imm_02(a, b);
 if (result != (0 + 5)) {
-	failed++;
-	fprintf(stderr, "error: add_imm_02 did not return correctly. Expected %ld, but got %ld\n", (0 + 5), result);
+	fprintf(stderr, "[%d] error: add_imm_02 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 + 5), result);
 }
 
 extern long add_imm_03(long a, long b);
 result = add_imm_03(a, b);
 if (result != (5 + 10 + 20)) {
-	failed++;
-	fprintf(stderr, "error: add_imm_03 did not return correctly. Expected %ld, but got %ld\n", (5 + 10 + 20), result);
+	fprintf(stderr, "[%d] error: add_imm_03 did not return correctly. Expected %ld, but got %ld\n", ++failed, (5 + 10 + 20), result);
 }
 
 extern long add_imm_04(long a, long b);
 result = add_imm_04(a, b);
 if (result != (5 + 10 + 20 + 30)) {
-	failed++;
-	fprintf(stderr, "error: add_imm_04 did not return correctly. Expected %ld, but got %ld\n", (5 + 10 + 20 + 30), result);
+	fprintf(stderr, "[%d] error: add_imm_04 did not return correctly. Expected %ld, but got %ld\n", ++failed, (5 + 10 + 20 + 30), result);
 }
 
 extern long add_imm_05(long a, long b);
 result = add_imm_05(a, b);
 if (result != (0 + a)) {
-	failed++;
-	fprintf(stderr, "error: add_imm_05 did not return correctly. Expected %ld, but got %ld\n", (0 + a), result);
+	fprintf(stderr, "[%d] error: add_imm_05 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 + a), result);
 }
 
 extern long add_imm_06(long a, long b);
 result = add_imm_06(a, b);
 if (result != (a + 0)) {
-	failed++;
-	fprintf(stderr, "error: add_imm_06 did not return correctly. Expected %ld, but got %ld\n", (a + 0), result);
+	fprintf(stderr, "[%d] error: add_imm_06 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a + 0), result);
 }
 
 extern long add_imm_07(long a, long b);
 result = add_imm_07(a, b);
 if (result != (a + 0 + 0)) {
-	failed++;
-	fprintf(stderr, "error: add_imm_07 did not return correctly. Expected %ld, but got %ld\n", (a + 0 + 0), result);
+	fprintf(stderr, "[%d] error: add_imm_07 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a + 0 + 0), result);
 }
 
 extern long add_imm_08(long a, long b);
 result = add_imm_08(a, b);
 if (result != (0 + a + 0)) {
-	failed++;
-	fprintf(stderr, "error: add_imm_08 did not return correctly. Expected %ld, but got %ld\n", (0 + a + 0), result);
+	fprintf(stderr, "[%d] error: add_imm_08 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 + a + 0), result);
 }
 
 extern long add_imm_09(long a, long b);
 result = add_imm_09(a, b);
 if (result != (0 + 0 + a)) {
-	failed++;
-	fprintf(stderr, "error: add_imm_09 did not return correctly. Expected %ld, but got %ld\n", (0 + 0 + a), result);
+	fprintf(stderr, "[%d] error: add_imm_09 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 + 0 + a), result);
 }
 
 extern long add_imm_10(long a, long b);
 result = add_imm_10(a, b);
 if (result != ((0))) {
-	failed++;
-	fprintf(stderr, "error: add_imm_10 did not return correctly. Expected %ld, but got %ld\n", ((0)), result);
+	fprintf(stderr, "[%d] error: add_imm_10 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((0)), result);
 }
 
 extern long add_imm_11(long a, long b);
 result = add_imm_11(a, b);
 if (result != ((0 + 5))) {
-	failed++;
-	fprintf(stderr, "error: add_imm_11 did not return correctly. Expected %ld, but got %ld\n", ((0 + 5)), result);
+	fprintf(stderr, "[%d] error: add_imm_11 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((0 + 5)), result);
 }
 
 extern long add_imm_12(long a, long b);
 result = add_imm_12(a, b);
 if (result != ((5 + 10) + 20)) {
-	failed++;
-	fprintf(stderr, "error: add_imm_12 did not return correctly. Expected %ld, but got %ld\n", ((5 + 10) + 20), result);
+	fprintf(stderr, "[%d] error: add_imm_12 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((5 + 10) + 20), result);
 }
 
 extern long add_imm_13(long a, long b);
 result = add_imm_13(a, b);
 if (result != (5 + (10 + 20))) {
-	failed++;
-	fprintf(stderr, "error: add_imm_13 did not return correctly. Expected %ld, but got %ld\n", (5 + (10 + 20)), result);
+	fprintf(stderr, "[%d] error: add_imm_13 did not return correctly. Expected %ld, but got %ld\n", ++failed, (5 + (10 + 20)), result);
 }
 
 extern long add_imm_14(long a, long b);
 result = add_imm_14(a, b);
 if (result != ((0 + a))) {
-	failed++;
-	fprintf(stderr, "error: add_imm_14 did not return correctly. Expected %ld, but got %ld\n", ((0 + a)), result);
+	fprintf(stderr, "[%d] error: add_imm_14 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((0 + a)), result);
 }
 
 extern long add_imm_15(long a, long b);
 result = add_imm_15(a, b);
 if (result != ((a + 0))) {
-	failed++;
-	fprintf(stderr, "error: add_imm_15 did not return correctly. Expected %ld, but got %ld\n", ((a + 0)), result);
+	fprintf(stderr, "[%d] error: add_imm_15 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a + 0)), result);
 }
 
 extern long add_imm_16(long a, long b);
 result = add_imm_16(a, b);
 if (result != ((a + 0) + 0)) {
-	failed++;
-	fprintf(stderr, "error: add_imm_16 did not return correctly. Expected %ld, but got %ld\n", ((a + 0) + 0), result);
+	fprintf(stderr, "[%d] error: add_imm_16 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a + 0) + 0), result);
 }
 
 extern long add_imm_17(long a, long b);
 result = add_imm_17(a, b);
 if (result != (a + (0 + 0))) {
-	failed++;
-	fprintf(stderr, "error: add_imm_17 did not return correctly. Expected %ld, but got %ld\n", (a + (0 + 0)), result);
+	fprintf(stderr, "[%d] error: add_imm_17 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a + (0 + 0)), result);
 }
 
 extern long add_imm_18(long a, long b);
 result = add_imm_18(a, b);
 if (result != ((0 + a) + 0)) {
-	failed++;
-	fprintf(stderr, "error: add_imm_18 did not return correctly. Expected %ld, but got %ld\n", ((0 + a) + 0), result);
+	fprintf(stderr, "[%d] error: add_imm_18 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((0 + a) + 0), result);
 }
 
 extern long add_imm_19(long a, long b);
 result = add_imm_19(a, b);
 if (result != (0 + (a + 0))) {
-	failed++;
-	fprintf(stderr, "error: add_imm_19 did not return correctly. Expected %ld, but got %ld\n", (0 + (a + 0)), result);
+	fprintf(stderr, "[%d] error: add_imm_19 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 + (a + 0)), result);
 }
 
 extern long add_imm_20(long a, long b);
 result = add_imm_20(a, b);
 if (result != ((0 + 0) + a)) {
-	failed++;
-	fprintf(stderr, "error: add_imm_20 did not return correctly. Expected %ld, but got %ld\n", ((0 + 0) + a), result);
+	fprintf(stderr, "[%d] error: add_imm_20 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((0 + 0) + a), result);
 }
 
 extern long add_imm_21(long a, long b);
 result = add_imm_21(a, b);
 if (result != (0 + (0 + a))) {
-	failed++;
-	fprintf(stderr, "error: add_imm_21 did not return correctly. Expected %ld, but got %ld\n", (0 + (0 + a)), result);
+	fprintf(stderr, "[%d] error: add_imm_21 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 + (0 + a)), result);
 }
 
 extern long add_var_01(long a, long b);
 result = add_var_01(a, b);
 if (result != (a + b)) {
-	failed++;
-	fprintf(stderr, "error: add_var_01 did not return correctly. Expected %ld, but got %ld\n", (a + b), result);
+	fprintf(stderr, "[%d] error: add_var_01 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a + b), result);
 }
 
 extern long add_var_02(long a, long b);
 result = add_var_02(a, b);
 if (result != (a + b + 0)) {
-	failed++;
-	fprintf(stderr, "error: add_var_02 did not return correctly. Expected %ld, but got %ld\n", (a + b + 0), result);
+	fprintf(stderr, "[%d] error: add_var_02 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a + b + 0), result);
 }
 
 extern long add_var_03(long a, long b);
 result = add_var_03(a, b);
 if (result != (a + 0 + b)) {
-	failed++;
-	fprintf(stderr, "error: add_var_03 did not return correctly. Expected %ld, but got %ld\n", (a + 0 + b), result);
+	fprintf(stderr, "[%d] error: add_var_03 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a + 0 + b), result);
 }
 
 extern long add_var_04(long a, long b);
 result = add_var_04(a, b);
 if (result != (0 + a + b)) {
-	failed++;
-	fprintf(stderr, "error: add_var_04 did not return correctly. Expected %ld, but got %ld\n", (0 + a + b), result);
+	fprintf(stderr, "[%d] error: add_var_04 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 + a + b), result);
 }
 
 extern long add_var_05(long a, long b);
 result = add_var_05(a, b);
 if (result != (a + b + 10)) {
-	failed++;
-	fprintf(stderr, "error: add_var_05 did not return correctly. Expected %ld, but got %ld\n", (a + b + 10), result);
+	fprintf(stderr, "[%d] error: add_var_05 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a + b + 10), result);
 }
 
 extern long add_var_06(long a, long b);
 result = add_var_06(a, b);
 if (result != (a + 10 + b)) {
-	failed++;
-	fprintf(stderr, "error: add_var_06 did not return correctly. Expected %ld, but got %ld\n", (a + 10 + b), result);
+	fprintf(stderr, "[%d] error: add_var_06 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a + 10 + b), result);
 }
 
 extern long add_var_07(long a, long b);
 result = add_var_07(a, b);
 if (result != (10 + a + b)) {
-	failed++;
-	fprintf(stderr, "error: add_var_07 did not return correctly. Expected %ld, but got %ld\n", (10 + a + b), result);
+	fprintf(stderr, "[%d] error: add_var_07 did not return correctly. Expected %ld, but got %ld\n", ++failed, (10 + a + b), result);
 }
 
 extern long add_var_08(long a, long b);
 result = add_var_08(a, b);
 if (result != ((a + b) + 0)) {
-	failed++;
-	fprintf(stderr, "error: add_var_08 did not return correctly. Expected %ld, but got %ld\n", ((a + b) + 0), result);
+	fprintf(stderr, "[%d] error: add_var_08 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a + b) + 0), result);
 }
 
 extern long add_var_09(long a, long b);
 result = add_var_09(a, b);
 if (result != (a + (b + 0))) {
-	failed++;
-	fprintf(stderr, "error: add_var_09 did not return correctly. Expected %ld, but got %ld\n", (a + (b + 0)), result);
+	fprintf(stderr, "[%d] error: add_var_09 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a + (b + 0)), result);
 }
 
 extern long add_var_10(long a, long b);
 result = add_var_10(a, b);
 if (result != ((a + 0) + b)) {
-	failed++;
-	fprintf(stderr, "error: add_var_10 did not return correctly. Expected %ld, but got %ld\n", ((a + 0) + b), result);
+	fprintf(stderr, "[%d] error: add_var_10 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a + 0) + b), result);
 }
 
 extern long add_var_11(long a, long b);
 result = add_var_11(a, b);
 if (result != (a + (0 + b))) {
-	failed++;
-	fprintf(stderr, "error: add_var_11 did not return correctly. Expected %ld, but got %ld\n", (a + (0 + b)), result);
+	fprintf(stderr, "[%d] error: add_var_11 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a + (0 + b)), result);
 }
 
 extern long add_var_12(long a, long b);
 result = add_var_12(a, b);
 if (result != ((0 + a) + b)) {
-	failed++;
-	fprintf(stderr, "error: add_var_12 did not return correctly. Expected %ld, but got %ld\n", ((0 + a) + b), result);
+	fprintf(stderr, "[%d] error: add_var_12 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((0 + a) + b), result);
 }
 
 extern long add_var_13(long a, long b);
 result = add_var_13(a, b);
 if (result != (0 + (a + b))) {
-	failed++;
-	fprintf(stderr, "error: add_var_13 did not return correctly. Expected %ld, but got %ld\n", (0 + (a + b)), result);
+	fprintf(stderr, "[%d] error: add_var_13 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 + (a + b)), result);
 }
 
 extern long add_var_14(long a, long b);
 result = add_var_14(a, b);
 if (result != ((a + b) + 10)) {
-	failed++;
-	fprintf(stderr, "error: add_var_14 did not return correctly. Expected %ld, but got %ld\n", ((a + b) + 10), result);
+	fprintf(stderr, "[%d] error: add_var_14 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a + b) + 10), result);
 }
 
 extern long add_var_15(long a, long b);
 result = add_var_15(a, b);
 if (result != (a + (b + 10))) {
-	failed++;
-	fprintf(stderr, "error: add_var_15 did not return correctly. Expected %ld, but got %ld\n", (a + (b + 10)), result);
+	fprintf(stderr, "[%d] error: add_var_15 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a + (b + 10)), result);
 }
 
 extern long add_var_16(long a, long b);
 result = add_var_16(a, b);
 if (result != ((a + 10) + b)) {
-	failed++;
-	fprintf(stderr, "error: add_var_16 did not return correctly. Expected %ld, but got %ld\n", ((a + 10) + b), result);
+	fprintf(stderr, "[%d] error: add_var_16 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a + 10) + b), result);
 }
 
 extern long add_var_17(long a, long b);
 result = add_var_17(a, b);
 if (result != (a + (10 + b))) {
-	failed++;
-	fprintf(stderr, "error: add_var_17 did not return correctly. Expected %ld, but got %ld\n", (a + (10 + b)), result);
+	fprintf(stderr, "[%d] error: add_var_17 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a + (10 + b)), result);
 }
 
 extern long add_var_18(long a, long b);
 result = add_var_18(a, b);
 if (result != ((10 + a) + b)) {
-	failed++;
-	fprintf(stderr, "error: add_var_18 did not return correctly. Expected %ld, but got %ld\n", ((10 + a) + b), result);
+	fprintf(stderr, "[%d] error: add_var_18 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((10 + a) + b), result);
 }
 
 extern long add_var_19(long a, long b);
 result = add_var_19(a, b);
 if (result != (10 + (a + b))) {
-	failed++;
-	fprintf(stderr, "error: add_var_19 did not return correctly. Expected %ld, but got %ld\n", (10 + (a + b)), result);
+	fprintf(stderr, "[%d] error: add_var_19 did not return correctly. Expected %ld, but got %ld\n", ++failed, (10 + (a + b)), result);
 }
 
 extern long sub_imm_01(long a, long b);
 result = sub_imm_01(a, b);
 if (result != (0 - 0)) {
-	failed++;
-	fprintf(stderr, "error: sub_imm_01 did not return correctly. Expected %ld, but got %ld\n", (0 - 0), result);
+	fprintf(stderr, "[%d] error: sub_imm_01 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 - 0), result);
 }
 
 extern long sub_imm_02(long a, long b);
 result = sub_imm_02(a, b);
 if (result != (5 - 0)) {
-	failed++;
-	fprintf(stderr, "error: sub_imm_02 did not return correctly. Expected %ld, but got %ld\n", (5 - 0), result);
+	fprintf(stderr, "[%d] error: sub_imm_02 did not return correctly. Expected %ld, but got %ld\n", ++failed, (5 - 0), result);
 }
 
 extern long sub_imm_03(long a, long b);
 result = sub_imm_03(a, b);
 if (result != (0 - 5)) {
-	failed++;
-	fprintf(stderr, "error: sub_imm_03 did not return correctly. Expected %ld, but got %ld\n", (0 - 5), result);
+	fprintf(stderr, "[%d] error: sub_imm_03 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 - 5), result);
 }
 
 extern long sub_imm_04(long a, long b);
 result = sub_imm_04(a, b);
 if (result != ((20 - 10) - 5)) {
-	failed++;
-	fprintf(stderr, "error: sub_imm_04 did not return correctly. Expected %ld, but got %ld\n", ((20 - 10) - 5), result);
+	fprintf(stderr, "[%d] error: sub_imm_04 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((20 - 10) - 5), result);
 }
 
 extern long sub_imm_05(long a, long b);
 result = sub_imm_05(a, b);
 if (result != (20 - (10 - 5))) {
-	failed++;
-	fprintf(stderr, "error: sub_imm_05 did not return correctly. Expected %ld, but got %ld\n", (20 - (10 - 5)), result);
+	fprintf(stderr, "[%d] error: sub_imm_05 did not return correctly. Expected %ld, but got %ld\n", ++failed, (20 - (10 - 5)), result);
 }
 
 extern long sub_imm_06(long a, long b);
 result = sub_imm_06(a, b);
 if (result != (a - 0)) {
-	failed++;
-	fprintf(stderr, "error: sub_imm_06 did not return correctly. Expected %ld, but got %ld\n", (a - 0), result);
+	fprintf(stderr, "[%d] error: sub_imm_06 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a - 0), result);
 }
 
 extern long sub_imm_07(long a, long b);
 result = sub_imm_07(a, b);
 if (result != ((a - 0) - 0)) {
-	failed++;
-	fprintf(stderr, "error: sub_imm_07 did not return correctly. Expected %ld, but got %ld\n", ((a - 0) - 0), result);
+	fprintf(stderr, "[%d] error: sub_imm_07 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a - 0) - 0), result);
 }
 
 extern long sub_imm_08(long a, long b);
 result = sub_imm_08(a, b);
 if (result != (a - (0 - 0))) {
-	failed++;
-	fprintf(stderr, "error: sub_imm_08 did not return correctly. Expected %ld, but got %ld\n", (a - (0 - 0)), result);
+	fprintf(stderr, "[%d] error: sub_imm_08 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a - (0 - 0)), result);
 }
 
 extern long sub_var_01(long a, long b);
 result = sub_var_01(a, b);
 if (result != (a - a)) {
-	failed++;
-	fprintf(stderr, "error: sub_var_01 did not return correctly. Expected %ld, but got %ld\n", (a - a), result);
+	fprintf(stderr, "[%d] error: sub_var_01 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a - a), result);
 }
 
 extern long sub_var_02(long a, long b);
 result = sub_var_02(a, b);
 if (result != ((a - a) - 0)) {
-	failed++;
-	fprintf(stderr, "error: sub_var_02 did not return correctly. Expected %ld, but got %ld\n", ((a - a) - 0), result);
+	fprintf(stderr, "[%d] error: sub_var_02 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a - a) - 0), result);
 }
 
 extern long sub_var_03(long a, long b);
 result = sub_var_03(a, b);
 if (result != (a - (a - 0))) {
-	failed++;
-	fprintf(stderr, "error: sub_var_03 did not return correctly. Expected %ld, but got %ld\n", (a - (a - 0)), result);
+	fprintf(stderr, "[%d] error: sub_var_03 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a - (a - 0)), result);
 }
 
 extern long mul_imm_01(long a, long b);
 result = mul_imm_01(a, b);
 if (result != (0 * 5)) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_01 did not return correctly. Expected %ld, but got %ld\n", (0 * 5), result);
+	fprintf(stderr, "[%d] error: mul_imm_01 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 * 5), result);
 }
 
 extern long mul_imm_02(long a, long b);
 result = mul_imm_02(a, b);
 if (result != (1 * 5)) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_02 did not return correctly. Expected %ld, but got %ld\n", (1 * 5), result);
+	fprintf(stderr, "[%d] error: mul_imm_02 did not return correctly. Expected %ld, but got %ld\n", ++failed, (1 * 5), result);
 }
 
 extern long mul_imm_03(long a, long b);
 result = mul_imm_03(a, b);
 if (result != (0 * 5 * 10)) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_03 did not return correctly. Expected %ld, but got %ld\n", (0 * 5 * 10), result);
+	fprintf(stderr, "[%d] error: mul_imm_03 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 * 5 * 10), result);
 }
 
 extern long mul_imm_04(long a, long b);
 result = mul_imm_04(a, b);
 if (result != (1 * 5 * 10)) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_04 did not return correctly. Expected %ld, but got %ld\n", (1 * 5 * 10), result);
+	fprintf(stderr, "[%d] error: mul_imm_04 did not return correctly. Expected %ld, but got %ld\n", ++failed, (1 * 5 * 10), result);
 }
 
 extern long mul_imm_06(long a, long b);
 result = mul_imm_06(a, b);
 if (result != (5 * 10 * 20)) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_06 did not return correctly. Expected %ld, but got %ld\n", (5 * 10 * 20), result);
+	fprintf(stderr, "[%d] error: mul_imm_06 did not return correctly. Expected %ld, but got %ld\n", ++failed, (5 * 10 * 20), result);
 }
 
 extern long mul_imm_07(long a, long b);
 result = mul_imm_07(a, b);
 if (result != (5 * 10 * 20 * 30)) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_07 did not return correctly. Expected %ld, but got %ld\n", (5 * 10 * 20 * 30), result);
+	fprintf(stderr, "[%d] error: mul_imm_07 did not return correctly. Expected %ld, but got %ld\n", ++failed, (5 * 10 * 20 * 30), result);
 }
 
 extern long mul_imm_08(long a, long b);
 result = mul_imm_08(a, b);
 if (result != (a * 0)) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_08 did not return correctly. Expected %ld, but got %ld\n", (a * 0), result);
+	fprintf(stderr, "[%d] error: mul_imm_08 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a * 0), result);
 }
 
 extern long mul_imm_09(long a, long b);
 result = mul_imm_09(a, b);
 if (result != (a * 1)) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_09 did not return correctly. Expected %ld, but got %ld\n", (a * 1), result);
+	fprintf(stderr, "[%d] error: mul_imm_09 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a * 1), result);
 }
 
 extern long mul_imm_10(long a, long b);
 result = mul_imm_10(a, b);
 if (result != (a * 0 * 0)) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_10 did not return correctly. Expected %ld, but got %ld\n", (a * 0 * 0), result);
+	fprintf(stderr, "[%d] error: mul_imm_10 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a * 0 * 0), result);
 }
 
 extern long mul_imm_11(long a, long b);
 result = mul_imm_11(a, b);
 if (result != (0 * a * 0)) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_11 did not return correctly. Expected %ld, but got %ld\n", (0 * a * 0), result);
+	fprintf(stderr, "[%d] error: mul_imm_11 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 * a * 0), result);
 }
 
 extern long mul_imm_12(long a, long b);
 result = mul_imm_12(a, b);
 if (result != (0 * 0 * a)) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_12 did not return correctly. Expected %ld, but got %ld\n", (0 * 0 * a), result);
+	fprintf(stderr, "[%d] error: mul_imm_12 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 * 0 * a), result);
 }
 
 extern long mul_imm_13(long a, long b);
 result = mul_imm_13(a, b);
 if (result != (a * 1 * 1)) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_13 did not return correctly. Expected %ld, but got %ld\n", (a * 1 * 1), result);
+	fprintf(stderr, "[%d] error: mul_imm_13 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a * 1 * 1), result);
 }
 
 extern long mul_imm_14(long a, long b);
 result = mul_imm_14(a, b);
 if (result != (1 * a * 1)) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_14 did not return correctly. Expected %ld, but got %ld\n", (1 * a * 1), result);
+	fprintf(stderr, "[%d] error: mul_imm_14 did not return correctly. Expected %ld, but got %ld\n", ++failed, (1 * a * 1), result);
 }
 
 extern long mul_imm_15(long a, long b);
 result = mul_imm_15(a, b);
 if (result != (1 * 1 * a)) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_15 did not return correctly. Expected %ld, but got %ld\n", (1 * 1 * a), result);
+	fprintf(stderr, "[%d] error: mul_imm_15 did not return correctly. Expected %ld, but got %ld\n", ++failed, (1 * 1 * a), result);
 }
 
 extern long mul_imm_16(long a, long b);
 result = mul_imm_16(a, b);
 if (result != ((a * 0) * 0)) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_16 did not return correctly. Expected %ld, but got %ld\n", ((a * 0) * 0), result);
+	fprintf(stderr, "[%d] error: mul_imm_16 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a * 0) * 0), result);
 }
 
 extern long mul_imm_17(long a, long b);
 result = mul_imm_17(a, b);
 if (result != (a * (0 * 0))) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_17 did not return correctly. Expected %ld, but got %ld\n", (a * (0 * 0)), result);
+	fprintf(stderr, "[%d] error: mul_imm_17 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a * (0 * 0)), result);
 }
 
 extern long mul_imm_18(long a, long b);
 result = mul_imm_18(a, b);
 if (result != ((0 * a) * 0)) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_18 did not return correctly. Expected %ld, but got %ld\n", ((0 * a) * 0), result);
+	fprintf(stderr, "[%d] error: mul_imm_18 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((0 * a) * 0), result);
 }
 
 extern long mul_imm_19(long a, long b);
 result = mul_imm_19(a, b);
 if (result != (0 * (a * 0))) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_19 did not return correctly. Expected %ld, but got %ld\n", (0 * (a * 0)), result);
+	fprintf(stderr, "[%d] error: mul_imm_19 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 * (a * 0)), result);
 }
 
 extern long mul_imm_20(long a, long b);
 result = mul_imm_20(a, b);
 if (result != ((0 * 0) * a)) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_20 did not return correctly. Expected %ld, but got %ld\n", ((0 * 0) * a), result);
+	fprintf(stderr, "[%d] error: mul_imm_20 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((0 * 0) * a), result);
 }
 
 extern long mul_imm_21(long a, long b);
 result = mul_imm_21(a, b);
 if (result != (0 * (0 * a))) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_21 did not return correctly. Expected %ld, but got %ld\n", (0 * (0 * a)), result);
+	fprintf(stderr, "[%d] error: mul_imm_21 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 * (0 * a)), result);
 }
 
 extern long mul_imm_22(long a, long b);
 result = mul_imm_22(a, b);
 if (result != ((a * 1) * 1)) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_22 did not return correctly. Expected %ld, but got %ld\n", ((a * 1) * 1), result);
+	fprintf(stderr, "[%d] error: mul_imm_22 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a * 1) * 1), result);
 }
 
 extern long mul_imm_23(long a, long b);
 result = mul_imm_23(a, b);
 if (result != (a * (1 * 1))) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_23 did not return correctly. Expected %ld, but got %ld\n", (a * (1 * 1)), result);
+	fprintf(stderr, "[%d] error: mul_imm_23 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a * (1 * 1)), result);
 }
 
 extern long mul_imm_24(long a, long b);
 result = mul_imm_24(a, b);
 if (result != ((1 * a) * 1)) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_24 did not return correctly. Expected %ld, but got %ld\n", ((1 * a) * 1), result);
+	fprintf(stderr, "[%d] error: mul_imm_24 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((1 * a) * 1), result);
 }
 
 extern long mul_imm_25(long a, long b);
 result = mul_imm_25(a, b);
 if (result != (1 * (a * 1))) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_25 did not return correctly. Expected %ld, but got %ld\n", (1 * (a * 1)), result);
+	fprintf(stderr, "[%d] error: mul_imm_25 did not return correctly. Expected %ld, but got %ld\n", ++failed, (1 * (a * 1)), result);
 }
 
 extern long mul_imm_26(long a, long b);
 result = mul_imm_26(a, b);
 if (result != ((1 * 1) * a)) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_26 did not return correctly. Expected %ld, but got %ld\n", ((1 * 1) * a), result);
+	fprintf(stderr, "[%d] error: mul_imm_26 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((1 * 1) * a), result);
 }
 
 extern long mul_imm_27(long a, long b);
 result = mul_imm_27(a, b);
 if (result != (1 * (1 * a))) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_27 did not return correctly. Expected %ld, but got %ld\n", (1 * (1 * a)), result);
+	fprintf(stderr, "[%d] error: mul_imm_27 did not return correctly. Expected %ld, but got %ld\n", ++failed, (1 * (1 * a)), result);
 }
 
 extern long mul_imm_28(long a, long b);
 result = mul_imm_28(a, b);
 if (result != (a * 2)) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_28 did not return correctly. Expected %ld, but got %ld\n", (a * 2), result);
+	fprintf(stderr, "[%d] error: mul_imm_28 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a * 2), result);
 }
 
 extern long mul_imm_29(long a, long b);
 result = mul_imm_29(a, b);
 if (result != (a * 4)) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_29 did not return correctly. Expected %ld, but got %ld\n", (a * 4), result);
+	fprintf(stderr, "[%d] error: mul_imm_29 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a * 4), result);
 }
 
 extern long mul_imm_30(long a, long b);
 result = mul_imm_30(a, b);
 if (result != (a * 8)) {
-	failed++;
-	fprintf(stderr, "error: mul_imm_30 did not return correctly. Expected %ld, but got %ld\n", (a * 8), result);
+	fprintf(stderr, "[%d] error: mul_imm_30 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a * 8), result);
 }
 
 extern long mul_var_01(long a, long b);
 result = mul_var_01(a, b);
 if (result != (a * b * 0)) {
-	failed++;
-	fprintf(stderr, "error: mul_var_01 did not return correctly. Expected %ld, but got %ld\n", (a * b * 0), result);
+	fprintf(stderr, "[%d] error: mul_var_01 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a * b * 0), result);
 }
 
 extern long mul_var_02(long a, long b);
 result = mul_var_02(a, b);
 if (result != (a * 0 * b)) {
-	failed++;
-	fprintf(stderr, "error: mul_var_02 did not return correctly. Expected %ld, but got %ld\n", (a * 0 * b), result);
+	fprintf(stderr, "[%d] error: mul_var_02 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a * 0 * b), result);
 }
 
 extern long mul_var_03(long a, long b);
 result = mul_var_03(a, b);
 if (result != (0 * a * b)) {
-	failed++;
-	fprintf(stderr, "error: mul_var_03 did not return correctly. Expected %ld, but got %ld\n", (0 * a * b), result);
+	fprintf(stderr, "[%d] error: mul_var_03 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 * a * b), result);
 }
 
 extern long mul_var_04(long a, long b);
 result = mul_var_04(a, b);
 if (result != ((a * b) * 0)) {
-	failed++;
-	fprintf(stderr, "error: mul_var_04 did not return correctly. Expected %ld, but got %ld\n", ((a * b) * 0), result);
+	fprintf(stderr, "[%d] error: mul_var_04 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a * b) * 0), result);
 }
 
 extern long mul_var_05(long a, long b);
 result = mul_var_05(a, b);
 if (result != (a * (b * 0))) {
-	failed++;
-	fprintf(stderr, "error: mul_var_05 did not return correctly. Expected %ld, but got %ld\n", (a * (b * 0)), result);
+	fprintf(stderr, "[%d] error: mul_var_05 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a * (b * 0)), result);
 }
 
 extern long mul_var_06(long a, long b);
 result = mul_var_06(a, b);
 if (result != ((a * 0) * b)) {
-	failed++;
-	fprintf(stderr, "error: mul_var_06 did not return correctly. Expected %ld, but got %ld\n", ((a * 0) * b), result);
+	fprintf(stderr, "[%d] error: mul_var_06 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a * 0) * b), result);
 }
 
 extern long mul_var_07(long a, long b);
 result = mul_var_07(a, b);
 if (result != (a * (0 * b))) {
-	failed++;
-	fprintf(stderr, "error: mul_var_07 did not return correctly. Expected %ld, but got %ld\n", (a * (0 * b)), result);
+	fprintf(stderr, "[%d] error: mul_var_07 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a * (0 * b)), result);
 }
 
 extern long mul_var_08(long a, long b);
 result = mul_var_08(a, b);
 if (result != ((0 * a) * b)) {
-	failed++;
-	fprintf(stderr, "error: mul_var_08 did not return correctly. Expected %ld, but got %ld\n", ((0 * a) * b), result);
+	fprintf(stderr, "[%d] error: mul_var_08 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((0 * a) * b), result);
 }
 
 extern long mul_var_09(long a, long b);
 result = mul_var_09(a, b);
 if (result != (0 * (a * b))) {
-	failed++;
-	fprintf(stderr, "error: mul_var_09 did not return correctly. Expected %ld, but got %ld\n", (0 * (a * b)), result);
+	fprintf(stderr, "[%d] error: mul_var_09 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 * (a * b)), result);
 }
 
 extern long add_mul_imm_01(long a, long b);
 result = add_mul_imm_01(a, b);
 if (result != ((0 + 0) * 0)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_imm_01 did not return correctly. Expected %ld, but got %ld\n", ((0 + 0) * 0), result);
+	fprintf(stderr, "[%d] error: add_mul_imm_01 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((0 + 0) * 0), result);
 }
 
 extern long add_mul_imm_02(long a, long b);
 result = add_mul_imm_02(a, b);
 if (result != ((0 + 0) * 1)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_imm_02 did not return correctly. Expected %ld, but got %ld\n", ((0 + 0) * 1), result);
+	fprintf(stderr, "[%d] error: add_mul_imm_02 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((0 + 0) * 1), result);
 }
 
 extern long add_mul_imm_03(long a, long b);
 result = add_mul_imm_03(a, b);
 if (result != ((5 + 0) * 0)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_imm_03 did not return correctly. Expected %ld, but got %ld\n", ((5 + 0) * 0), result);
+	fprintf(stderr, "[%d] error: add_mul_imm_03 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((5 + 0) * 0), result);
 }
 
 extern long add_mul_imm_04(long a, long b);
 result = add_mul_imm_04(a, b);
 if (result != ((5 + 0) * 1)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_imm_04 did not return correctly. Expected %ld, but got %ld\n", ((5 + 0) * 1), result);
+	fprintf(stderr, "[%d] error: add_mul_imm_04 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((5 + 0) * 1), result);
 }
 
 extern long add_mul_imm_05(long a, long b);
 result = add_mul_imm_05(a, b);
 if (result != ((5 + 0) * 10)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_imm_05 did not return correctly. Expected %ld, but got %ld\n", ((5 + 0) * 10), result);
+	fprintf(stderr, "[%d] error: add_mul_imm_05 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((5 + 0) * 10), result);
 }
 
 extern long add_mul_imm_06(long a, long b);
 result = add_mul_imm_06(a, b);
 if (result != ((5 + 10) * 20)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_imm_06 did not return correctly. Expected %ld, but got %ld\n", ((5 + 10) * 20), result);
+	fprintf(stderr, "[%d] error: add_mul_imm_06 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((5 + 10) * 20), result);
 }
 
 extern long add_mul_imm_07(long a, long b);
 result = add_mul_imm_07(a, b);
 if (result != (0 + (0 * 0))) {
-	failed++;
-	fprintf(stderr, "error: add_mul_imm_07 did not return correctly. Expected %ld, but got %ld\n", (0 + (0 * 0)), result);
+	fprintf(stderr, "[%d] error: add_mul_imm_07 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 + (0 * 0)), result);
 }
 
 extern long add_mul_imm_08(long a, long b);
 result = add_mul_imm_08(a, b);
 if (result != (0 + (1 * 1))) {
-	failed++;
-	fprintf(stderr, "error: add_mul_imm_08 did not return correctly. Expected %ld, but got %ld\n", (0 + (1 * 1)), result);
+	fprintf(stderr, "[%d] error: add_mul_imm_08 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 + (1 * 1)), result);
 }
 
 extern long add_mul_imm_09(long a, long b);
 result = add_mul_imm_09(a, b);
 if (result != (5 + (0 * 0))) {
-	failed++;
-	fprintf(stderr, "error: add_mul_imm_09 did not return correctly. Expected %ld, but got %ld\n", (5 + (0 * 0)), result);
+	fprintf(stderr, "[%d] error: add_mul_imm_09 did not return correctly. Expected %ld, but got %ld\n", ++failed, (5 + (0 * 0)), result);
 }
 
 extern long add_mul_imm_10(long a, long b);
 result = add_mul_imm_10(a, b);
 if (result != (5 + (1 * 1))) {
-	failed++;
-	fprintf(stderr, "error: add_mul_imm_10 did not return correctly. Expected %ld, but got %ld\n", (5 + (1 * 1)), result);
+	fprintf(stderr, "[%d] error: add_mul_imm_10 did not return correctly. Expected %ld, but got %ld\n", ++failed, (5 + (1 * 1)), result);
 }
 
 extern long add_mul_imm_11(long a, long b);
 result = add_mul_imm_11(a, b);
 if (result != (5 + (10 * 20))) {
-	failed++;
-	fprintf(stderr, "error: add_mul_imm_11 did not return correctly. Expected %ld, but got %ld\n", (5 + (10 * 20)), result);
+	fprintf(stderr, "[%d] error: add_mul_imm_11 did not return correctly. Expected %ld, but got %ld\n", ++failed, (5 + (10 * 20)), result);
 }
 
 extern long add_mul_imm_12(long a, long b);
 result = add_mul_imm_12(a, b);
 if (result != ((5 * 10) + 20 + 30)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_imm_12 did not return correctly. Expected %ld, but got %ld\n", ((5 * 10) + 20 + 30), result);
+	fprintf(stderr, "[%d] error: add_mul_imm_12 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((5 * 10) + 20 + 30), result);
 }
 
 extern long add_mul_imm_13(long a, long b);
 result = add_mul_imm_13(a, b);
 if (result != (5 + (10 * 20) + 30)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_imm_13 did not return correctly. Expected %ld, but got %ld\n", (5 + (10 * 20) + 30), result);
+	fprintf(stderr, "[%d] error: add_mul_imm_13 did not return correctly. Expected %ld, but got %ld\n", ++failed, (5 + (10 * 20) + 30), result);
 }
 
 extern long add_mul_imm_14(long a, long b);
 result = add_mul_imm_14(a, b);
 if (result != (5 + 10 + (20 * 30))) {
-	failed++;
-	fprintf(stderr, "error: add_mul_imm_14 did not return correctly. Expected %ld, but got %ld\n", (5 + 10 + (20 * 30)), result);
+	fprintf(stderr, "[%d] error: add_mul_imm_14 did not return correctly. Expected %ld, but got %ld\n", ++failed, (5 + 10 + (20 * 30)), result);
 }
 
 extern long add_mul_imm_15(long a, long b);
 result = add_mul_imm_15(a, b);
 if (result != ((5 + 10) * 20 * 30)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_imm_15 did not return correctly. Expected %ld, but got %ld\n", ((5 + 10) * 20 * 30), result);
+	fprintf(stderr, "[%d] error: add_mul_imm_15 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((5 + 10) * 20 * 30), result);
 }
 
 extern long add_mul_imm_16(long a, long b);
 result = add_mul_imm_16(a, b);
 if (result != (5 * (10 + 20) * 30)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_imm_16 did not return correctly. Expected %ld, but got %ld\n", (5 * (10 + 20) * 30), result);
+	fprintf(stderr, "[%d] error: add_mul_imm_16 did not return correctly. Expected %ld, but got %ld\n", ++failed, (5 * (10 + 20) * 30), result);
 }
 
 extern long add_mul_imm_17(long a, long b);
 result = add_mul_imm_17(a, b);
 if (result != (5 * 10 * (20 + 30))) {
-	failed++;
-	fprintf(stderr, "error: add_mul_imm_17 did not return correctly. Expected %ld, but got %ld\n", (5 * 10 * (20 + 30)), result);
+	fprintf(stderr, "[%d] error: add_mul_imm_17 did not return correctly. Expected %ld, but got %ld\n", ++failed, (5 * 10 * (20 + 30)), result);
 }
 
 extern long add_mul_01(long a, long b);
 result = add_mul_01(a, b);
 if (result != ((a + 0) * 0)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_01 did not return correctly. Expected %ld, but got %ld\n", ((a + 0) * 0), result);
+	fprintf(stderr, "[%d] error: add_mul_01 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a + 0) * 0), result);
 }
 
 extern long add_mul_02(long a, long b);
 result = add_mul_02(a, b);
 if (result != (a + (0 * 0))) {
-	failed++;
-	fprintf(stderr, "error: add_mul_02 did not return correctly. Expected %ld, but got %ld\n", (a + (0 * 0)), result);
+	fprintf(stderr, "[%d] error: add_mul_02 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a + (0 * 0)), result);
 }
 
 extern long add_mul_03(long a, long b);
 result = add_mul_03(a, b);
 if (result != ((a + 0) * 1)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_03 did not return correctly. Expected %ld, but got %ld\n", ((a + 0) * 1), result);
+	fprintf(stderr, "[%d] error: add_mul_03 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a + 0) * 1), result);
 }
 
 extern long add_mul_04(long a, long b);
 result = add_mul_04(a, b);
 if (result != (a + (0 * 1))) {
-	failed++;
-	fprintf(stderr, "error: add_mul_04 did not return correctly. Expected %ld, but got %ld\n", (a + (0 * 1)), result);
+	fprintf(stderr, "[%d] error: add_mul_04 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a + (0 * 1)), result);
 }
 
 extern long add_mul_05(long a, long b);
 result = add_mul_05(a, b);
 if (result != ((a + 0) * 2)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_05 did not return correctly. Expected %ld, but got %ld\n", ((a + 0) * 2), result);
+	fprintf(stderr, "[%d] error: add_mul_05 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a + 0) * 2), result);
 }
 
 extern long add_mul_06(long a, long b);
 result = add_mul_06(a, b);
 if (result != (2 * (a + 0))) {
-	failed++;
-	fprintf(stderr, "error: add_mul_06 did not return correctly. Expected %ld, but got %ld\n", (2 * (a + 0)), result);
+	fprintf(stderr, "[%d] error: add_mul_06 did not return correctly. Expected %ld, but got %ld\n", ++failed, (2 * (a + 0)), result);
 }
 
 extern long add_mul_07(long a, long b);
 result = add_mul_07(a, b);
 if (result != ((a + 0) * 4)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_07 did not return correctly. Expected %ld, but got %ld\n", ((a + 0) * 4), result);
+	fprintf(stderr, "[%d] error: add_mul_07 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a + 0) * 4), result);
 }
 
 extern long add_mul_08(long a, long b);
 result = add_mul_08(a, b);
 if (result != (4 * (a + 0))) {
-	failed++;
-	fprintf(stderr, "error: add_mul_08 did not return correctly. Expected %ld, but got %ld\n", (4 * (a + 0)), result);
+	fprintf(stderr, "[%d] error: add_mul_08 did not return correctly. Expected %ld, but got %ld\n", ++failed, (4 * (a + 0)), result);
 }
 
 extern long add_mul_09(long a, long b);
 result = add_mul_09(a, b);
 if (result != ((a + 0) * 8)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_09 did not return correctly. Expected %ld, but got %ld\n", ((a + 0) * 8), result);
+	fprintf(stderr, "[%d] error: add_mul_09 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a + 0) * 8), result);
 }
 
 extern long add_mul_10(long a, long b);
 result = add_mul_10(a, b);
 if (result != (8 * (a + 0))) {
-	failed++;
-	fprintf(stderr, "error: add_mul_10 did not return correctly. Expected %ld, but got %ld\n", (8 * (a + 0)), result);
+	fprintf(stderr, "[%d] error: add_mul_10 did not return correctly. Expected %ld, but got %ld\n", ++failed, (8 * (a + 0)), result);
 }
 
 extern long add_mul_11(long a, long b);
 result = add_mul_11(a, b);
 if (result != ((a + 5) * 0)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_11 did not return correctly. Expected %ld, but got %ld\n", ((a + 5) * 0), result);
+	fprintf(stderr, "[%d] error: add_mul_11 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a + 5) * 0), result);
 }
 
 extern long add_mul_12(long a, long b);
 result = add_mul_12(a, b);
 if (result != ((a + 5) * 1)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_12 did not return correctly. Expected %ld, but got %ld\n", ((a + 5) * 1), result);
+	fprintf(stderr, "[%d] error: add_mul_12 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a + 5) * 1), result);
 }
 
 extern long add_mul_13(long a, long b);
 result = add_mul_13(a, b);
 if (result != ((a + 5) * 2)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_13 did not return correctly. Expected %ld, but got %ld\n", ((a + 5) * 2), result);
+	fprintf(stderr, "[%d] error: add_mul_13 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a + 5) * 2), result);
 }
 
 extern long add_mul_14(long a, long b);
 result = add_mul_14(a, b);
 if (result != ((a + 5) * 4)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_14 did not return correctly. Expected %ld, but got %ld\n", ((a + 5) * 4), result);
+	fprintf(stderr, "[%d] error: add_mul_14 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a + 5) * 4), result);
 }
 
 extern long add_mul_15(long a, long b);
 result = add_mul_15(a, b);
 if (result != ((a + 5) * 8)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_15 did not return correctly. Expected %ld, but got %ld\n", ((a + 5) * 8), result);
+	fprintf(stderr, "[%d] error: add_mul_15 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a + 5) * 8), result);
 }
 
 extern long add_mul_16(long a, long b);
 result = add_mul_16(a, b);
 if (result != ((a + b) * 0)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_16 did not return correctly. Expected %ld, but got %ld\n", ((a + b) * 0), result);
+	fprintf(stderr, "[%d] error: add_mul_16 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a + b) * 0), result);
 }
 
 extern long add_mul_17(long a, long b);
 result = add_mul_17(a, b);
 if (result != ((a + b) * 1)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_17 did not return correctly. Expected %ld, but got %ld\n", ((a + b) * 1), result);
+	fprintf(stderr, "[%d] error: add_mul_17 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a + b) * 1), result);
 }
 
 extern long add_mul_18(long a, long b);
 result = add_mul_18(a, b);
 if (result != (0 * (a + 5))) {
-	failed++;
-	fprintf(stderr, "error: add_mul_18 did not return correctly. Expected %ld, but got %ld\n", (0 * (a + 5)), result);
+	fprintf(stderr, "[%d] error: add_mul_18 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 * (a + 5)), result);
 }
 
 extern long add_mul_19(long a, long b);
 result = add_mul_19(a, b);
 if (result != (1 * (a + 5))) {
-	failed++;
-	fprintf(stderr, "error: add_mul_19 did not return correctly. Expected %ld, but got %ld\n", (1 * (a + 5)), result);
+	fprintf(stderr, "[%d] error: add_mul_19 did not return correctly. Expected %ld, but got %ld\n", ++failed, (1 * (a + 5)), result);
 }
 
 extern long add_mul_20(long a, long b);
 result = add_mul_20(a, b);
 if (result != (2 * (a + 5))) {
-	failed++;
-	fprintf(stderr, "error: add_mul_20 did not return correctly. Expected %ld, but got %ld\n", (2 * (a + 5)), result);
+	fprintf(stderr, "[%d] error: add_mul_20 did not return correctly. Expected %ld, but got %ld\n", ++failed, (2 * (a + 5)), result);
 }
 
 extern long add_mul_21(long a, long b);
 result = add_mul_21(a, b);
 if (result != (4 * (a + 5))) {
-	failed++;
-	fprintf(stderr, "error: add_mul_21 did not return correctly. Expected %ld, but got %ld\n", (4 * (a + 5)), result);
+	fprintf(stderr, "[%d] error: add_mul_21 did not return correctly. Expected %ld, but got %ld\n", ++failed, (4 * (a + 5)), result);
 }
 
 extern long add_mul_22(long a, long b);
 result = add_mul_22(a, b);
 if (result != (8 * (a + 5))) {
-	failed++;
-	fprintf(stderr, "error: add_mul_22 did not return correctly. Expected %ld, but got %ld\n", (8 * (a + 5)), result);
+	fprintf(stderr, "[%d] error: add_mul_22 did not return correctly. Expected %ld, but got %ld\n", ++failed, (8 * (a + 5)), result);
 }
 
 extern long add_mul_23(long a, long b);
 result = add_mul_23(a, b);
 if (result != (0 * (a + b))) {
-	failed++;
-	fprintf(stderr, "error: add_mul_23 did not return correctly. Expected %ld, but got %ld\n", (0 * (a + b)), result);
+	fprintf(stderr, "[%d] error: add_mul_23 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 * (a + b)), result);
 }
 
 extern long add_mul_24(long a, long b);
 result = add_mul_24(a, b);
 if (result != (1 * (a + b))) {
-	failed++;
-	fprintf(stderr, "error: add_mul_24 did not return correctly. Expected %ld, but got %ld\n", (1 * (a + b)), result);
+	fprintf(stderr, "[%d] error: add_mul_24 did not return correctly. Expected %ld, but got %ld\n", ++failed, (1 * (a + b)), result);
 }
 
 extern long add_mul_25(long a, long b);
 result = add_mul_25(a, b);
 if (result != ((a + 5) * 0 * 0)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_25 did not return correctly. Expected %ld, but got %ld\n", ((a + 5) * 0 * 0), result);
+	fprintf(stderr, "[%d] error: add_mul_25 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a + 5) * 0 * 0), result);
 }
 
 extern long add_mul_26(long a, long b);
 result = add_mul_26(a, b);
 if (result != (0 * (a + 5) * 0)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_26 did not return correctly. Expected %ld, but got %ld\n", (0 * (a + 5) * 0), result);
+	fprintf(stderr, "[%d] error: add_mul_26 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 * (a + 5) * 0), result);
 }
 
 extern long add_mul_27(long a, long b);
 result = add_mul_27(a, b);
 if (result != (0 * 0 * (a + 5))) {
-	failed++;
-	fprintf(stderr, "error: add_mul_27 did not return correctly. Expected %ld, but got %ld\n", (0 * 0 * (a + 5)), result);
+	fprintf(stderr, "[%d] error: add_mul_27 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 * 0 * (a + 5)), result);
 }
 
 extern long add_mul_28(long a, long b);
 result = add_mul_28(a, b);
 if (result != ((a + 5) * 1 * 1)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_28 did not return correctly. Expected %ld, but got %ld\n", ((a + 5) * 1 * 1), result);
+	fprintf(stderr, "[%d] error: add_mul_28 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a + 5) * 1 * 1), result);
 }
 
 extern long add_mul_29(long a, long b);
 result = add_mul_29(a, b);
 if (result != (1 * (a + 5) * 1)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_29 did not return correctly. Expected %ld, but got %ld\n", (1 * (a + 5) * 1), result);
+	fprintf(stderr, "[%d] error: add_mul_29 did not return correctly. Expected %ld, but got %ld\n", ++failed, (1 * (a + 5) * 1), result);
 }
 
 extern long add_mul_30(long a, long b);
 result = add_mul_30(a, b);
 if (result != (1 * 1 * (a + 5))) {
-	failed++;
-	fprintf(stderr, "error: add_mul_30 did not return correctly. Expected %ld, but got %ld\n", (1 * 1 * (a + 5)), result);
+	fprintf(stderr, "[%d] error: add_mul_30 did not return correctly. Expected %ld, but got %ld\n", ++failed, (1 * 1 * (a + 5)), result);
 }
 
 extern long add_mul_31(long a, long b);
 result = add_mul_31(a, b);
 if (result != ((a + 5) * 2 * 1)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_31 did not return correctly. Expected %ld, but got %ld\n", ((a + 5) * 2 * 1), result);
+	fprintf(stderr, "[%d] error: add_mul_31 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a + 5) * 2 * 1), result);
 }
 
 extern long add_mul_32(long a, long b);
 result = add_mul_32(a, b);
 if (result != (2 * (a + 5) * 1)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_32 did not return correctly. Expected %ld, but got %ld\n", (2 * (a + 5) * 1), result);
+	fprintf(stderr, "[%d] error: add_mul_32 did not return correctly. Expected %ld, but got %ld\n", ++failed, (2 * (a + 5) * 1), result);
 }
 
 extern long add_mul_33(long a, long b);
 result = add_mul_33(a, b);
 if (result != (2 * 1 * (a + 5))) {
-	failed++;
-	fprintf(stderr, "error: add_mul_33 did not return correctly. Expected %ld, but got %ld\n", (2 * 1 * (a + 5)), result);
+	fprintf(stderr, "[%d] error: add_mul_33 did not return correctly. Expected %ld, but got %ld\n", ++failed, (2 * 1 * (a + 5)), result);
 }
 
 extern long add_mul_34(long a, long b);
 result = add_mul_34(a, b);
 if (result != ((a + 5) * 4 * 1)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_34 did not return correctly. Expected %ld, but got %ld\n", ((a + 5) * 4 * 1), result);
+	fprintf(stderr, "[%d] error: add_mul_34 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a + 5) * 4 * 1), result);
 }
 
 extern long add_mul_35(long a, long b);
 result = add_mul_35(a, b);
 if (result != (4 * (a + 5) * 1)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_35 did not return correctly. Expected %ld, but got %ld\n", (4 * (a + 5) * 1), result);
+	fprintf(stderr, "[%d] error: add_mul_35 did not return correctly. Expected %ld, but got %ld\n", ++failed, (4 * (a + 5) * 1), result);
 }
 
 extern long add_mul_36(long a, long b);
 result = add_mul_36(a, b);
 if (result != (4 * 1 * (a + 5))) {
-	failed++;
-	fprintf(stderr, "error: add_mul_36 did not return correctly. Expected %ld, but got %ld\n", (4 * 1 * (a + 5)), result);
+	fprintf(stderr, "[%d] error: add_mul_36 did not return correctly. Expected %ld, but got %ld\n", ++failed, (4 * 1 * (a + 5)), result);
 }
 
 extern long add_mul_37(long a, long b);
 result = add_mul_37(a, b);
 if (result != ((a + 5) * 8 * 1)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_37 did not return correctly. Expected %ld, but got %ld\n", ((a + 5) * 8 * 1), result);
+	fprintf(stderr, "[%d] error: add_mul_37 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a + 5) * 8 * 1), result);
 }
 
 extern long add_mul_38(long a, long b);
 result = add_mul_38(a, b);
 if (result != (8 * (a + 5) * 1)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_38 did not return correctly. Expected %ld, but got %ld\n", (8 * (a + 5) * 1), result);
+	fprintf(stderr, "[%d] error: add_mul_38 did not return correctly. Expected %ld, but got %ld\n", ++failed, (8 * (a + 5) * 1), result);
 }
 
 extern long add_mul_39(long a, long b);
 result = add_mul_39(a, b);
 if (result != (8 * 1 * (a + 5))) {
-	failed++;
-	fprintf(stderr, "error: add_mul_39 did not return correctly. Expected %ld, but got %ld\n", (8 * 1 * (a + 5)), result);
+	fprintf(stderr, "[%d] error: add_mul_39 did not return correctly. Expected %ld, but got %ld\n", ++failed, (8 * 1 * (a + 5)), result);
 }
 
 extern long add_mul_40(long a, long b);
 result = add_mul_40(a, b);
 if (result != ((a + 5) * 2 * 2)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_40 did not return correctly. Expected %ld, but got %ld\n", ((a + 5) * 2 * 2), result);
+	fprintf(stderr, "[%d] error: add_mul_40 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a + 5) * 2 * 2), result);
 }
 
 extern long add_mul_41(long a, long b);
 result = add_mul_41(a, b);
 if (result != (2 * (a + 5) * 2)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_41 did not return correctly. Expected %ld, but got %ld\n", (2 * (a + 5) * 2), result);
+	fprintf(stderr, "[%d] error: add_mul_41 did not return correctly. Expected %ld, but got %ld\n", ++failed, (2 * (a + 5) * 2), result);
 }
 
 extern long add_mul_42(long a, long b);
 result = add_mul_42(a, b);
 if (result != (2 * 2 * (a + 5))) {
-	failed++;
-	fprintf(stderr, "error: add_mul_42 did not return correctly. Expected %ld, but got %ld\n", (2 * 2 * (a + 5)), result);
+	fprintf(stderr, "[%d] error: add_mul_42 did not return correctly. Expected %ld, but got %ld\n", ++failed, (2 * 2 * (a + 5)), result);
 }
 
 extern long add_mul_43(long a, long b);
 result = add_mul_43(a, b);
 if (result != ((a + 5) * 2 * 4)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_43 did not return correctly. Expected %ld, but got %ld\n", ((a + 5) * 2 * 4), result);
+	fprintf(stderr, "[%d] error: add_mul_43 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a + 5) * 2 * 4), result);
 }
 
 extern long add_mul_44(long a, long b);
 result = add_mul_44(a, b);
 if (result != (2 * (a + 5) * 4)) {
-	failed++;
-	fprintf(stderr, "error: add_mul_44 did not return correctly. Expected %ld, but got %ld\n", (2 * (a + 5) * 4), result);
+	fprintf(stderr, "[%d] error: add_mul_44 did not return correctly. Expected %ld, but got %ld\n", ++failed, (2 * (a + 5) * 4), result);
 }
 
 extern long add_mul_45(long a, long b);
 result = add_mul_45(a, b);
 if (result != (2 * 4 * (a + 5))) {
-	failed++;
-	fprintf(stderr, "error: add_mul_45 did not return correctly. Expected %ld, but got %ld\n", (2 * 4 * (a + 5)), result);
+	fprintf(stderr, "[%d] error: add_mul_45 did not return correctly. Expected %ld, but got %ld\n", ++failed, (2 * 4 * (a + 5)), result);
 }
 
 extern long mul_add_01(long a, long b);
 result = mul_add_01(a, b);
 if (result != ((a * 0) + 0)) {
-	failed++;
-	fprintf(stderr, "error: mul_add_01 did not return correctly. Expected %ld, but got %ld\n", ((a * 0) + 0), result);
+	fprintf(stderr, "[%d] error: mul_add_01 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a * 0) + 0), result);
 }
 
 extern long mul_add_02(long a, long b);
 result = mul_add_02(a, b);
 if (result != (a * (0 + 0))) {
-	failed++;
-	fprintf(stderr, "error: mul_add_02 did not return correctly. Expected %ld, but got %ld\n", (a * (0 + 0)), result);
+	fprintf(stderr, "[%d] error: mul_add_02 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a * (0 + 0)), result);
 }
 
 extern long mul_add_03(long a, long b);
 result = mul_add_03(a, b);
 if (result != ((a * 0) + 1)) {
-	failed++;
-	fprintf(stderr, "error: mul_add_03 did not return correctly. Expected %ld, but got %ld\n", ((a * 0) + 1), result);
+	fprintf(stderr, "[%d] error: mul_add_03 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a * 0) + 1), result);
 }
 
 extern long mul_add_04(long a, long b);
 result = mul_add_04(a, b);
 if (result != (a * (0 + 1))) {
-	failed++;
-	fprintf(stderr, "error: mul_add_04 did not return correctly. Expected %ld, but got %ld\n", (a * (0 + 1)), result);
+	fprintf(stderr, "[%d] error: mul_add_04 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a * (0 + 1)), result);
 }
 
 extern long mul_add_05(long a, long b);
 result = mul_add_05(a, b);
 if (result != ((a * 1) + 0)) {
-	failed++;
-	fprintf(stderr, "error: mul_add_05 did not return correctly. Expected %ld, but got %ld\n", ((a * 1) + 0), result);
+	fprintf(stderr, "[%d] error: mul_add_05 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a * 1) + 0), result);
 }
 
 extern long mul_add_06(long a, long b);
 result = mul_add_06(a, b);
 if (result != (0 + (a * 1))) {
-	failed++;
-	fprintf(stderr, "error: mul_add_06 did not return correctly. Expected %ld, but got %ld\n", (0 + (a * 1)), result);
+	fprintf(stderr, "[%d] error: mul_add_06 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 + (a * 1)), result);
 }
 
 extern long mul_add_07(long a, long b);
 result = mul_add_07(a, b);
 if (result != ((a * 2) + 0)) {
-	failed++;
-	fprintf(stderr, "error: mul_add_07 did not return correctly. Expected %ld, but got %ld\n", ((a * 2) + 0), result);
+	fprintf(stderr, "[%d] error: mul_add_07 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a * 2) + 0), result);
 }
 
 extern long mul_add_08(long a, long b);
 result = mul_add_08(a, b);
 if (result != (0 + (a * 2))) {
-	failed++;
-	fprintf(stderr, "error: mul_add_08 did not return correctly. Expected %ld, but got %ld\n", (0 + (a * 2)), result);
+	fprintf(stderr, "[%d] error: mul_add_08 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 + (a * 2)), result);
 }
 
 extern long mul_add_09(long a, long b);
 result = mul_add_09(a, b);
 if (result != ((a * 4) + 0)) {
-	failed++;
-	fprintf(stderr, "error: mul_add_09 did not return correctly. Expected %ld, but got %ld\n", ((a * 4) + 0), result);
+	fprintf(stderr, "[%d] error: mul_add_09 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a * 4) + 0), result);
 }
 
 extern long mul_add_10(long a, long b);
 result = mul_add_10(a, b);
 if (result != (0 + (a * 4))) {
-	failed++;
-	fprintf(stderr, "error: mul_add_10 did not return correctly. Expected %ld, but got %ld\n", (0 + (a * 4)), result);
+	fprintf(stderr, "[%d] error: mul_add_10 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 + (a * 4)), result);
 }
 
 extern long mul_add_11(long a, long b);
 result = mul_add_11(a, b);
 if (result != ((a * 8) + 0)) {
-	failed++;
-	fprintf(stderr, "error: mul_add_11 did not return correctly. Expected %ld, but got %ld\n", ((a * 8) + 0), result);
+	fprintf(stderr, "[%d] error: mul_add_11 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a * 8) + 0), result);
 }
 
 extern long mul_add_12(long a, long b);
 result = mul_add_12(a, b);
 if (result != (0 + (a * 8))) {
-	failed++;
-	fprintf(stderr, "error: mul_add_12 did not return correctly. Expected %ld, but got %ld\n", (0 + (a * 8)), result);
+	fprintf(stderr, "[%d] error: mul_add_12 did not return correctly. Expected %ld, but got %ld\n", ++failed, (0 + (a * 8)), result);
 }
 
 extern long mul_add_13(long a, long b);
 result = mul_add_13(a, b);
 if (result != (a + (b * 1))) {
-	failed++;
-	fprintf(stderr, "error: mul_add_13 did not return correctly. Expected %ld, but got %ld\n", (a + (b * 1)), result);
+	fprintf(stderr, "[%d] error: mul_add_13 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a + (b * 1)), result);
 }
 
 extern long mul_add_14(long a, long b);
 result = mul_add_14(a, b);
 if (result != ((a * 1) + b)) {
-	failed++;
-	fprintf(stderr, "error: mul_add_14 did not return correctly. Expected %ld, but got %ld\n", ((a * 1) + b), result);
+	fprintf(stderr, "[%d] error: mul_add_14 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a * 1) + b), result);
 }
 
 extern long mul_add_15(long a, long b);
 result = mul_add_15(a, b);
 if (result != (a + (b * 2))) {
-	failed++;
-	fprintf(stderr, "error: mul_add_15 did not return correctly. Expected %ld, but got %ld\n", (a + (b * 2)), result);
+	fprintf(stderr, "[%d] error: mul_add_15 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a + (b * 2)), result);
 }
 
 extern long mul_add_16(long a, long b);
 result = mul_add_16(a, b);
 if (result != ((a * 2) + b)) {
-	failed++;
-	fprintf(stderr, "error: mul_add_16 did not return correctly. Expected %ld, but got %ld\n", ((a * 2) + b), result);
+	fprintf(stderr, "[%d] error: mul_add_16 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a * 2) + b), result);
 }
 
 extern long mul_add_17(long a, long b);
 result = mul_add_17(a, b);
 if (result != (a + (b * 4))) {
-	failed++;
-	fprintf(stderr, "error: mul_add_17 did not return correctly. Expected %ld, but got %ld\n", (a + (b * 4)), result);
+	fprintf(stderr, "[%d] error: mul_add_17 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a + (b * 4)), result);
 }
 
 extern long mul_add_18(long a, long b);
 result = mul_add_18(a, b);
 if (result != ((a * 4) + b)) {
-	failed++;
-	fprintf(stderr, "error: mul_add_18 did not return correctly. Expected %ld, but got %ld\n", ((a * 4) + b), result);
+	fprintf(stderr, "[%d] error: mul_add_18 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a * 4) + b), result);
 }
 
 extern long mul_add_19(long a, long b);
 result = mul_add_19(a, b);
 if (result != (a + (b * 8))) {
-	failed++;
-	fprintf(stderr, "error: mul_add_19 did not return correctly. Expected %ld, but got %ld\n", (a + (b * 8)), result);
+	fprintf(stderr, "[%d] error: mul_add_19 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a + (b * 8)), result);
 }
 
 extern long mul_add_20(long a, long b);
 result = mul_add_20(a, b);
 if (result != ((a * 8) + b)) {
-	failed++;
-	fprintf(stderr, "error: mul_add_20 did not return correctly. Expected %ld, but got %ld\n", ((a * 8) + b), result);
+	fprintf(stderr, "[%d] error: mul_add_20 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((a * 8) + b), result);
 }
 
 extern long mul_add_21(long a, long b);
 result = mul_add_21(a, b);
 if (result != (a + (1 * (b + 5)))) {
-	failed++;
-	fprintf(stderr, "error: mul_add_21 did not return correctly. Expected %ld, but got %ld\n", (a + (1 * (b + 5))), result);
+	fprintf(stderr, "[%d] error: mul_add_21 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a + (1 * (b + 5))), result);
 }
 
 extern long mul_add_22(long a, long b);
 result = mul_add_22(a, b);
 if (result != (a + ((b + 5) * 1))) {
-	failed++;
-	fprintf(stderr, "error: mul_add_22 did not return correctly. Expected %ld, but got %ld\n", (a + ((b + 5) * 1)), result);
+	fprintf(stderr, "[%d] error: mul_add_22 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a + ((b + 5) * 1)), result);
 }
 
 extern long mul_add_23(long a, long b);
 result = mul_add_23(a, b);
 if (result != ((1 * (b + 5)) + a)) {
-	failed++;
-	fprintf(stderr, "error: mul_add_23 did not return correctly. Expected %ld, but got %ld\n", ((1 * (b + 5)) + a), result);
+	fprintf(stderr, "[%d] error: mul_add_23 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((1 * (b + 5)) + a), result);
 }
 
 extern long mul_add_24(long a, long b);
 result = mul_add_24(a, b);
 if (result != (((b + 5) * 1) + a)) {
-	failed++;
-	fprintf(stderr, "error: mul_add_24 did not return correctly. Expected %ld, but got %ld\n", (((b + 5) * 1) + a), result);
+	fprintf(stderr, "[%d] error: mul_add_24 did not return correctly. Expected %ld, but got %ld\n", ++failed, (((b + 5) * 1) + a), result);
 }
 
 extern long mul_add_25(long a, long b);
 result = mul_add_25(a, b);
 if (result != (a + (2 * (b + 5)))) {
-	failed++;
-	fprintf(stderr, "error: mul_add_25 did not return correctly. Expected %ld, but got %ld\n", (a + (2 * (b + 5))), result);
+	fprintf(stderr, "[%d] error: mul_add_25 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a + (2 * (b + 5))), result);
 }
 
 extern long mul_add_26(long a, long b);
 result = mul_add_26(a, b);
 if (result != (a + ((b + 5) * 2))) {
-	failed++;
-	fprintf(stderr, "error: mul_add_26 did not return correctly. Expected %ld, but got %ld\n", (a + ((b + 5) * 2)), result);
+	fprintf(stderr, "[%d] error: mul_add_26 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a + ((b + 5) * 2)), result);
 }
 
 extern long mul_add_27(long a, long b);
 result = mul_add_27(a, b);
 if (result != ((2 * (b + 5)) + a)) {
-	failed++;
-	fprintf(stderr, "error: mul_add_27 did not return correctly. Expected %ld, but got %ld\n", ((2 * (b + 5)) + a), result);
+	fprintf(stderr, "[%d] error: mul_add_27 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((2 * (b + 5)) + a), result);
 }
 
 extern long mul_add_28(long a, long b);
 result = mul_add_28(a, b);
 if (result != (((b + 5) * 2) + a)) {
-	failed++;
-	fprintf(stderr, "error: mul_add_28 did not return correctly. Expected %ld, but got %ld\n", (((b + 5) * 2) + a), result);
+	fprintf(stderr, "[%d] error: mul_add_28 did not return correctly. Expected %ld, but got %ld\n", ++failed, (((b + 5) * 2) + a), result);
 }
 
 extern long mul_add_29(long a, long b);
 result = mul_add_29(a, b);
 if (result != (a + (4 * (b + 5)))) {
-	failed++;
-	fprintf(stderr, "error: mul_add_29 did not return correctly. Expected %ld, but got %ld\n", (a + (4 * (b + 5))), result);
+	fprintf(stderr, "[%d] error: mul_add_29 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a + (4 * (b + 5))), result);
 }
 
 extern long mul_add_30(long a, long b);
 result = mul_add_30(a, b);
 if (result != (a + ((b + 5) * 4))) {
-	failed++;
-	fprintf(stderr, "error: mul_add_30 did not return correctly. Expected %ld, but got %ld\n", (a + ((b + 5) * 4)), result);
+	fprintf(stderr, "[%d] error: mul_add_30 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a + ((b + 5) * 4)), result);
 }
 
 extern long mul_add_31(long a, long b);
 result = mul_add_31(a, b);
 if (result != ((4 * (b + 5)) + a)) {
-	failed++;
-	fprintf(stderr, "error: mul_add_31 did not return correctly. Expected %ld, but got %ld\n", ((4 * (b + 5)) + a), result);
+	fprintf(stderr, "[%d] error: mul_add_31 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((4 * (b + 5)) + a), result);
 }
 
 extern long mul_add_32(long a, long b);
 result = mul_add_32(a, b);
 if (result != (((b + 5) * 4) + a)) {
-	failed++;
-	fprintf(stderr, "error: mul_add_32 did not return correctly. Expected %ld, but got %ld\n", (((b + 5) * 4) + a), result);
+	fprintf(stderr, "[%d] error: mul_add_32 did not return correctly. Expected %ld, but got %ld\n", ++failed, (((b + 5) * 4) + a), result);
 }
 
 extern long mul_add_33(long a, long b);
 result = mul_add_33(a, b);
 if (result != (a + (8 * (b + 5)))) {
-	failed++;
-	fprintf(stderr, "error: mul_add_33 did not return correctly. Expected %ld, but got %ld\n", (a + (8 * (b + 5))), result);
+	fprintf(stderr, "[%d] error: mul_add_33 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a + (8 * (b + 5))), result);
 }
 
 extern long mul_add_34(long a, long b);
 result = mul_add_34(a, b);
 if (result != (a + ((b + 5) * 8))) {
-	failed++;
-	fprintf(stderr, "error: mul_add_34 did not return correctly. Expected %ld, but got %ld\n", (a + ((b + 5) * 8)), result);
+	fprintf(stderr, "[%d] error: mul_add_34 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a + ((b + 5) * 8)), result);
 }
 
 extern long mul_add_35(long a, long b);
 result = mul_add_35(a, b);
 if (result != ((8 * (b + 5)) + a)) {
-	failed++;
-	fprintf(stderr, "error: mul_add_35 did not return correctly. Expected %ld, but got %ld\n", ((8 * (b + 5)) + a), result);
+	fprintf(stderr, "[%d] error: mul_add_35 did not return correctly. Expected %ld, but got %ld\n", ++failed, ((8 * (b + 5)) + a), result);
 }
 
 extern long mul_add_36(long a, long b);
 result = mul_add_36(a, b);
 if (result != (((b + 5) * 8) + a)) {
-	failed++;
-	fprintf(stderr, "error: mul_add_36 did not return correctly. Expected %ld, but got %ld\n", (((b + 5) * 8) + a), result);
+	fprintf(stderr, "[%d] error: mul_add_36 did not return correctly. Expected %ld, but got %ld\n", ++failed, (((b + 5) * 8) + a), result);
 }
 
 RET(failed == 0);
