@@ -1,0 +1,7 @@
+foo(a:int, b:int, c:int, d:int, e:int):int
+    return bar() + a + b + 2 + bar() + c + 8 + d + 16 + e + 32 + bar();
+end;
+
+bar():int
+    return 2;
+end;
