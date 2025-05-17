@@ -1,0 +1,5 @@
+long a[1];
+
+extern long foo(long[]);
+
+foo(a);

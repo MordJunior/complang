@@ -1,0 +1,6 @@
+/* this is to thest that array accesses are not optimized away */
+
+foo(a : array of int) : int
+  a[8 * 1000 * 1024];
+  return 0;
+end;
