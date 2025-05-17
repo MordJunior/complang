@@ -1,0 +1,319 @@
+long *a = malloc(sizeof(long) * 6 * 10 * 20 * 30);
+long b = 1201;
+long c = -1864;
+
+for (int i = 0; i < 6 * 10 * 20 * 30; i++) {
+  a[i] = random();
+}
+
+long result;
+int failed = 0;
+
+// This is the regex that can be used to create this call file 
+// NOTE: RET(failed == 0) must be added manually at the end
+//
+// ^(\w+)[^;]*return\s+([^;]*);\s+end;\s+
+// extern long $1(long *a, long b, long c);\nresult = $1(a, b, c);\nif (result != ($2)) {\n\tfprintf(stderr, "[%02d] error: $1 did not return correctly. Expected %ld, but got %ld\\n", ++failed, ($2), result);\n}\n\n
+
+extern long arr_add_imm_01(long *a, long b, long c);
+result = arr_add_imm_01(a, b, c);
+if (result != (a[0] + 5)) {
+	fprintf(stderr, "[%02d] error: arr_add_imm_01 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[0] + 5), result);
+}
+
+extern long arr_add_imm_02(long *a, long b, long c);
+result = arr_add_imm_02(a, b, c);
+if (result != (5 + a[0])) {
+	fprintf(stderr, "[%02d] error: arr_add_imm_02 did not return correctly. Expected %ld, but got %ld\n", ++failed, (5 + a[0]), result);
+}
+
+extern long arr_add_imm_03(long *a, long b, long c);
+result = arr_add_imm_03(a, b, c);
+if (result != (a[5] + 10)) {
+	fprintf(stderr, "[%02d] error: arr_add_imm_03 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[5] + 10), result);
+}
+
+extern long arr_add_imm_04(long *a, long b, long c);
+result = arr_add_imm_04(a, b, c);
+if (result != (10 + a[5])) {
+	fprintf(stderr, "[%02d] error: arr_add_imm_04 did not return correctly. Expected %ld, but got %ld\n", ++failed, (10 + a[5]), result);
+}
+
+extern long arr_add_imm_05(long *a, long b, long c);
+result = arr_add_imm_05(a, b, c);
+if (result != (a[b] + 5)) {
+	fprintf(stderr, "[%02d] error: arr_add_imm_05 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[b] + 5), result);
+}
+
+extern long arr_add_imm_06(long *a, long b, long c);
+result = arr_add_imm_06(a, b, c);
+if (result != (5 + a[b])) {
+	fprintf(stderr, "[%02d] error: arr_add_imm_06 did not return correctly. Expected %ld, but got %ld\n", ++failed, (5 + a[b]), result);
+}
+
+extern long arr_add_imm_07(long *a, long b, long c);
+result = arr_add_imm_07(a, b, c);
+if (result != (a[b + 5] + 10)) {
+	fprintf(stderr, "[%02d] error: arr_add_imm_07 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[b + 5] + 10), result);
+}
+
+extern long arr_add_imm_08(long *a, long b, long c);
+result = arr_add_imm_08(a, b, c);
+if (result != (10 + a[5 + b])) {
+	fprintf(stderr, "[%02d] error: arr_add_imm_08 did not return correctly. Expected %ld, but got %ld\n", ++failed, (10 + a[5 + b]), result);
+}
+
+extern long arr_add_imm_09(long *a, long b, long c);
+result = arr_add_imm_09(a, b, c);
+if (result != (a[(b + 5) * 1] + 10)) {
+	fprintf(stderr, "[%02d] error: arr_add_imm_09 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[(b + 5) * 1] + 10), result);
+}
+
+extern long arr_add_imm_10(long *a, long b, long c);
+result = arr_add_imm_10(a, b, c);
+if (result != (10 + a[1 * (5 + b)])) {
+	fprintf(stderr, "[%02d] error: arr_add_imm_10 did not return correctly. Expected %ld, but got %ld\n", ++failed, (10 + a[1 * (5 + b)]), result);
+}
+
+extern long arr_add_var_01(long *a, long b, long c);
+result = arr_add_var_01(a, b, c);
+if (result != (a[0] + c)) {
+	fprintf(stderr, "[%02d] error: arr_add_var_01 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[0] + c), result);
+}
+
+extern long arr_add_var_02(long *a, long b, long c);
+result = arr_add_var_02(a, b, c);
+if (result != (c + a[0])) {
+	fprintf(stderr, "[%02d] error: arr_add_var_02 did not return correctly. Expected %ld, but got %ld\n", ++failed, (c + a[0]), result);
+}
+
+extern long arr_add_var_03(long *a, long b, long c);
+result = arr_add_var_03(a, b, c);
+if (result != (a[5] + c)) {
+	fprintf(stderr, "[%02d] error: arr_add_var_03 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[5] + c), result);
+}
+
+extern long arr_add_var_04(long *a, long b, long c);
+result = arr_add_var_04(a, b, c);
+if (result != (c + a[5])) {
+	fprintf(stderr, "[%02d] error: arr_add_var_04 did not return correctly. Expected %ld, but got %ld\n", ++failed, (c + a[5]), result);
+}
+
+extern long arr_add_var_05(long *a, long b, long c);
+result = arr_add_var_05(a, b, c);
+if (result != (a[b] + c)) {
+	fprintf(stderr, "[%02d] error: arr_add_var_05 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[b] + c), result);
+}
+
+extern long arr_add_var_06(long *a, long b, long c);
+result = arr_add_var_06(a, b, c);
+if (result != (c + a[b])) {
+	fprintf(stderr, "[%02d] error: arr_add_var_06 did not return correctly. Expected %ld, but got %ld\n", ++failed, (c + a[b]), result);
+}
+
+extern long arr_add_var_07(long *a, long b, long c);
+result = arr_add_var_07(a, b, c);
+if (result != (a[b + 5] + c)) {
+	fprintf(stderr, "[%02d] error: arr_add_var_07 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[b + 5] + c), result);
+}
+
+extern long arr_add_var_08(long *a, long b, long c);
+result = arr_add_var_08(a, b, c);
+if (result != (c + a[5 + b])) {
+	fprintf(stderr, "[%02d] error: arr_add_var_08 did not return correctly. Expected %ld, but got %ld\n", ++failed, (c + a[5 + b]), result);
+}
+
+extern long arr_add_var_09(long *a, long b, long c);
+result = arr_add_var_09(a, b, c);
+if (result != (a[(b + 5) * 1] + c)) {
+	fprintf(stderr, "[%02d] error: arr_add_var_09 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[(b + 5) * 1] + c), result);
+}
+
+extern long arr_add_var_10(long *a, long b, long c);
+result = arr_add_var_10(a, b, c);
+if (result != (c + a[1 * (5 + b)])) {
+	fprintf(stderr, "[%02d] error: arr_add_var_10 did not return correctly. Expected %ld, but got %ld\n", ++failed, (c + a[1 * (5 + b)]), result);
+}
+
+extern long arr_sub_imm_01(long *a, long b, long c);
+result = arr_sub_imm_01(a, b, c);
+if (result != (a[0] - 5)) {
+	fprintf(stderr, "[%02d] error: arr_sub_imm_01 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[0] - 5), result);
+}
+
+extern long arr_sub_imm_02(long *a, long b, long c);
+result = arr_sub_imm_02(a, b, c);
+if (result != (a[5] - 10)) {
+	fprintf(stderr, "[%02d] error: arr_sub_imm_02 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[5] - 10), result);
+}
+
+extern long arr_sub_imm_03(long *a, long b, long c);
+result = arr_sub_imm_03(a, b, c);
+if (result != (a[b] - 5)) {
+	fprintf(stderr, "[%02d] error: arr_sub_imm_03 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[b] - 5), result);
+}
+
+extern long arr_sub_imm_04(long *a, long b, long c);
+result = arr_sub_imm_04(a, b, c);
+if (result != (a[b + 5] - 10)) {
+	fprintf(stderr, "[%02d] error: arr_sub_imm_04 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[b + 5] - 10), result);
+}
+
+extern long arr_sub_imm_05(long *a, long b, long c);
+result = arr_sub_imm_05(a, b, c);
+if (result != (a[(b + 5) * 1] - 10)) {
+	fprintf(stderr, "[%02d] error: arr_sub_imm_05 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[(b + 5) * 1] - 10), result);
+}
+
+extern long arr_sub_var_01(long *a, long b, long c);
+result = arr_sub_var_01(a, b, c);
+if (result != (a[0] - c)) {
+	fprintf(stderr, "[%02d] error: arr_sub_var_01 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[0] - c), result);
+}
+
+extern long arr_sub_var_02(long *a, long b, long c);
+result = arr_sub_var_02(a, b, c);
+if (result != (a[5] - c)) {
+	fprintf(stderr, "[%02d] error: arr_sub_var_02 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[5] - c), result);
+}
+
+extern long arr_sub_var_03(long *a, long b, long c);
+result = arr_sub_var_03(a, b, c);
+if (result != (a[b] - c)) {
+	fprintf(stderr, "[%02d] error: arr_sub_var_03 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[b] - c), result);
+}
+
+extern long arr_sub_var_04(long *a, long b, long c);
+result = arr_sub_var_04(a, b, c);
+if (result != (a[b + 5] - c)) {
+	fprintf(stderr, "[%02d] error: arr_sub_var_04 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[b + 5] - c), result);
+}
+
+extern long arr_sub_var_05(long *a, long b, long c);
+result = arr_sub_var_05(a, b, c);
+if (result != (a[(b + 5) * 1] - c)) {
+	fprintf(stderr, "[%02d] error: arr_sub_var_05 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[(b + 5) * 1] - c), result);
+}
+
+extern long arr_mul_imm_01(long *a, long b, long c);
+result = arr_mul_imm_01(a, b, c);
+if (result != (a[0] * 5)) {
+	fprintf(stderr, "[%02d] error: arr_mul_imm_01 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[0] * 5), result);
+}
+
+extern long arr_mul_imm_02(long *a, long b, long c);
+result = arr_mul_imm_02(a, b, c);
+if (result != (5 * a[0])) {
+	fprintf(stderr, "[%02d] error: arr_mul_imm_02 did not return correctly. Expected %ld, but got %ld\n", ++failed, (5 * a[0]), result);
+}
+
+extern long arr_mul_imm_03(long *a, long b, long c);
+result = arr_mul_imm_03(a, b, c);
+if (result != (a[5] * 10)) {
+	fprintf(stderr, "[%02d] error: arr_mul_imm_03 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[5] * 10), result);
+}
+
+extern long arr_mul_imm_04(long *a, long b, long c);
+result = arr_mul_imm_04(a, b, c);
+if (result != (10 * a[5])) {
+	fprintf(stderr, "[%02d] error: arr_mul_imm_04 did not return correctly. Expected %ld, but got %ld\n", ++failed, (10 * a[5]), result);
+}
+
+extern long arr_mul_imm_05(long *a, long b, long c);
+result = arr_mul_imm_05(a, b, c);
+if (result != (a[b] * 5)) {
+	fprintf(stderr, "[%02d] error: arr_mul_imm_05 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[b] * 5), result);
+}
+
+extern long arr_mul_imm_06(long *a, long b, long c);
+result = arr_mul_imm_06(a, b, c);
+if (result != (5 * a[b])) {
+	fprintf(stderr, "[%02d] error: arr_mul_imm_06 did not return correctly. Expected %ld, but got %ld\n", ++failed, (5 * a[b]), result);
+}
+
+extern long arr_mul_imm_07(long *a, long b, long c);
+result = arr_mul_imm_07(a, b, c);
+if (result != (a[b + 5] * 10)) {
+	fprintf(stderr, "[%02d] error: arr_mul_imm_07 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[b + 5] * 10), result);
+}
+
+extern long arr_mul_imm_08(long *a, long b, long c);
+result = arr_mul_imm_08(a, b, c);
+if (result != (10 * a[5 + b])) {
+	fprintf(stderr, "[%02d] error: arr_mul_imm_08 did not return correctly. Expected %ld, but got %ld\n", ++failed, (10 * a[5 + b]), result);
+}
+
+extern long arr_mul_imm_09(long *a, long b, long c);
+result = arr_mul_imm_09(a, b, c);
+if (result != (a[(b + 5) * 1] * 10)) {
+	fprintf(stderr, "[%02d] error: arr_mul_imm_09 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[(b + 5) * 1] * 10), result);
+}
+
+extern long arr_mul_imm_10(long *a, long b, long c);
+result = arr_mul_imm_10(a, b, c);
+if (result != (10 * a[1 * (5 + b)])) {
+	fprintf(stderr, "[%02d] error: arr_mul_imm_10 did not return correctly. Expected %ld, but got %ld\n", ++failed, (10 * a[1 * (5 + b)]), result);
+}
+
+extern long arr_mul_var_01(long *a, long b, long c);
+result = arr_mul_var_01(a, b, c);
+if (result != (a[0] * c)) {
+	fprintf(stderr, "[%02d] error: arr_mul_var_01 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[0] * c), result);
+}
+
+extern long arr_mul_var_02(long *a, long b, long c);
+result = arr_mul_var_02(a, b, c);
+if (result != (c * a[0])) {
+	fprintf(stderr, "[%02d] error: arr_mul_var_02 did not return correctly. Expected %ld, but got %ld\n", ++failed, (c * a[0]), result);
+}
+
+extern long arr_mul_var_03(long *a, long b, long c);
+result = arr_mul_var_03(a, b, c);
+if (result != (a[5] * c)) {
+	fprintf(stderr, "[%02d] error: arr_mul_var_03 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[5] * c), result);
+}
+
+extern long arr_mul_var_04(long *a, long b, long c);
+result = arr_mul_var_04(a, b, c);
+if (result != (c * a[5])) {
+	fprintf(stderr, "[%02d] error: arr_mul_var_04 did not return correctly. Expected %ld, but got %ld\n", ++failed, (c * a[5]), result);
+}
+
+extern long arr_mul_var_05(long *a, long b, long c);
+result = arr_mul_var_05(a, b, c);
+if (result != (a[b] * c)) {
+	fprintf(stderr, "[%02d] error: arr_mul_var_05 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[b] * c), result);
+}
+
+extern long arr_mul_var_06(long *a, long b, long c);
+result = arr_mul_var_06(a, b, c);
+if (result != (c * a[b])) {
+	fprintf(stderr, "[%02d] error: arr_mul_var_06 did not return correctly. Expected %ld, but got %ld\n", ++failed, (c * a[b]), result);
+}
+
+extern long arr_mul_var_07(long *a, long b, long c);
+result = arr_mul_var_07(a, b, c);
+if (result != (a[b + 5] * c)) {
+	fprintf(stderr, "[%02d] error: arr_mul_var_07 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[b + 5] * c), result);
+}
+
+extern long arr_mul_var_08(long *a, long b, long c);
+result = arr_mul_var_08(a, b, c);
+if (result != (c * a[5 + b])) {
+	fprintf(stderr, "[%02d] error: arr_mul_var_08 did not return correctly. Expected %ld, but got %ld\n", ++failed, (c * a[5 + b]), result);
+}
+
+extern long arr_mul_var_09(long *a, long b, long c);
+result = arr_mul_var_09(a, b, c);
+if (result != (a[(b + 5) * 1] * c)) {
+	fprintf(stderr, "[%02d] error: arr_mul_var_09 did not return correctly. Expected %ld, but got %ld\n", ++failed, (a[(b + 5) * 1] * c), result);
+}
+
+extern long arr_mul_var_10(long *a, long b, long c);
+result = arr_mul_var_10(a, b, c);
+if (result != (c * a[1 * (5 + b)])) {
+	fprintf(stderr, "[%02d] error: arr_mul_var_10 did not return correctly. Expected %ld, but got %ld\n", ++failed, (c * a[1 * (5 + b)]), result);
+}
+
+free(a);
+RET(failed == 0);

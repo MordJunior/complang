@@ -1,0 +1,106 @@
+/* all functions in this file should only produce a single assembly instructions */
+
+arr_imm_01(a : array of int, b : int) : int
+  return a[0];
+end;
+
+arr_imm_02(a : array of int, b : int) : int
+  return a[5 + 10];
+end;
+
+arr_imm_03(a : array of int, b : int) : int
+  return a[(5 + 10) + 20];
+end;
+
+arr_imm_04(a : array of int, b : int) : int
+  return a[5 + 10 + 20 + 30];
+end;
+
+arr_imm_05(a : array of int, b : int) : int
+  return a[10 - 5];
+end;
+
+arr_imm_06(a : array of int, b : int) : int
+  return a[(20 - 10) - 5];
+end;
+
+arr_imm_07(a : array of int, b : int) : int
+  return a[5 * 10];
+end;
+
+arr_imm_08(a : array of int, b : int) : int
+  return a[(5 * 10) * 20];
+end;
+
+arr_imm_09(a : array of int, b : int) : int
+  return a[5 * 10 * 20 * 30];
+end;
+
+arr_var_01(a : array of int, b : int) : int
+  return a[b];
+end;
+
+arr_var_02(a : array of int, b : int) : int
+  return a[b - b];
+end;
+
+arr_var_03(a : array of int, b : int) : int
+  return a[b + 5];
+end;
+
+arr_var_04(a : array of int, b : int) : int
+  return a[b + 5 + 10];
+end;
+
+arr_var_05(a : array of int, b : int) : int
+  return a[5 + b];
+end;
+
+arr_var_06(a : array of int, b : int) : int
+  return a[10 + 5 + b];
+end;
+
+arr_var_07(a : array of int, b : int) : int
+  return a[b - 5];
+end;
+
+arr_var_08(a : array of int, b : int) : int
+  return a[(b + 5) * 1];
+end;
+
+arr_var_09(a : array of int, b : int) : int
+  return a[(b + 5 + 10) * 1];
+end;
+
+arr_var_10(a : array of int, b : int) : int
+  return a[(5 + b) * 1];
+end;
+
+arr_var_11(a : array of int, b : int) : int
+  return a[(10 + 5 + b) * 1];
+end;
+
+arr_var_12(a : array of int, b : int) : int
+  return a[(b - 5) * 1];
+end;
+
+arr_var_13(a : array of int, b : int) : int
+  return a[1 * (b + 5)];
+end;
+
+arr_var_14(a : array of int, b : int) : int
+  return a[1 * (b + 5 + 10)];
+end;
+
+arr_var_15(a : array of int, b : int) : int
+  return a[1 * (5 + b)];
+end;
+
+arr_var_16(a : array of int, b : int) : int
+  return a[1 * (10 + 5 + b)];
+end;
+
+arr_var_17(a : array of int, b : int) : int
+  return a[1 * (b - 5)];
+end;
+

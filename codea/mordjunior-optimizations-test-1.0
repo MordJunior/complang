@@ -1,3 +1,5 @@
+/* all functions in this file should only produce a single assembly instructions */
+
 ret_imm_01(a : int, b : int) : int
   return 0xFFa;
 end;

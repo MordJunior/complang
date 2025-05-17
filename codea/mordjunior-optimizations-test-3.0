@@ -1,0 +1,202 @@
+/* all functions in this file should only produce two assembly instructions */
+
+arr_add_imm_01(a : array of int, b : int, c : int) : int
+  return a[0] + 5;
+end;
+
+arr_add_imm_02(a : array of int, b : int, c : int) : int
+  return 5 + a[0];
+end;
+
+arr_add_imm_03(a : array of int, b : int, c : int) : int
+  return a[5] + 10;
+end;
+
+arr_add_imm_04(a : array of int, b : int, c : int) : int
+  return 10 + a[5];
+end;
+
+arr_add_imm_05(a : array of int, b : int, c : int) : int
+  return a[b] + 5;
+end;
+
+arr_add_imm_06(a : array of int, b : int, c : int) : int
+  return 5 + a[b];
+end;
+
+arr_add_imm_07(a : array of int, b : int, c : int) : int
+  return a[b + 5] + 10;
+end;
+
+arr_add_imm_08(a : array of int, b : int, c : int) : int
+  return 10 + a[5 + b];
+end;
+
+arr_add_imm_09(a : array of int, b : int, c : int) : int
+  return a[(b + 5) * 1] + 10;
+end;
+
+arr_add_imm_10(a : array of int, b : int, c : int) : int
+  return 10 + a[1 * (5 + b)];
+end;
+
+arr_add_var_01(a : array of int, b : int, c : int) : int
+  return a[0] + c;
+end;
+
+arr_add_var_02(a : array of int, b : int, c : int) : int
+  return c + a[0];
+end;
+
+arr_add_var_03(a : array of int, b : int, c : int) : int
+  return a[5] + c;
+end;
+
+arr_add_var_04(a : array of int, b : int, c : int) : int
+  return c + a[5];
+end;
+
+arr_add_var_05(a : array of int, b : int, c : int) : int
+  return a[b] + c;
+end;
+
+arr_add_var_06(a : array of int, b : int, c : int) : int
+  return c + a[b];
+end;
+
+arr_add_var_07(a : array of int, b : int, c : int) : int
+  return a[b + 5] + c;
+end;
+
+arr_add_var_08(a : array of int, b : int, c : int) : int
+  return c + a[5 + b];
+end;
+
+arr_add_var_09(a : array of int, b : int, c : int) : int
+  return a[(b + 5) * 1] + c;
+end;
+
+arr_add_var_10(a : array of int, b : int, c : int) : int
+  return c + a[1 * (5 + b)];
+end;
+
+arr_sub_imm_01(a : array of int, b : int, c : int) : int
+  return a[0] - 5;
+end;
+
+arr_sub_imm_02(a : array of int, b : int, c : int) : int
+  return a[5] - 10;
+end;
+
+arr_sub_imm_03(a : array of int, b : int, c : int) : int
+  return a[b] - 5;
+end;
+
+arr_sub_imm_04(a : array of int, b : int, c : int) : int
+  return a[b + 5] - 10;
+end;
+
+arr_sub_imm_05(a : array of int, b : int, c : int) : int
+  return a[(b + 5) * 1] - 10;
+end;
+
+arr_sub_var_01(a : array of int, b : int, c : int) : int
+  return a[0] - c;
+end;
+
+arr_sub_var_02(a : array of int, b : int, c : int) : int
+  return a[5] - c;
+end;
+
+arr_sub_var_03(a : array of int, b : int, c : int) : int
+  return a[b] - c;
+end;
+
+arr_sub_var_04(a : array of int, b : int, c : int) : int
+  return a[b + 5] - c;
+end;
+
+arr_sub_var_05(a : array of int, b : int, c : int) : int
+  return a[(b + 5) * 1] - c;
+end;
+
+arr_mul_imm_01(a : array of int, b : int, c : int) : int
+  return a[0] * 5;
+end;
+
+arr_mul_imm_02(a : array of int, b : int, c : int) : int
+  return 5 * a[0];
+end;
+
+arr_mul_imm_03(a : array of int, b : int, c : int) : int
+  return a[5] * 10;
+end;
+
+arr_mul_imm_04(a : array of int, b : int, c : int) : int
+  return 10 * a[5];
+end;
+
+arr_mul_imm_05(a : array of int, b : int, c : int) : int
+  return a[b] * 5;
+end;
+
+arr_mul_imm_06(a : array of int, b : int, c : int) : int
+  return 5 * a[b];
+end;
+
+arr_mul_imm_07(a : array of int, b : int, c : int) : int
+  return a[b + 5] * 10;
+end;
+
+arr_mul_imm_08(a : array of int, b : int, c : int) : int
+  return 10 * a[5 + b];
+end;
+
+arr_mul_imm_09(a : array of int, b : int, c : int) : int
+  return a[(b + 5) * 1] * 10;
+end;
+
+arr_mul_imm_10(a : array of int, b : int, c : int) : int
+  return 10 * a[1 * (5 + b)];
+end;
+
+arr_mul_var_01(a : array of int, b : int, c : int) : int
+  return a[0] * c;
+end;
+
+arr_mul_var_02(a : array of int, b : int, c : int) : int
+  return c * a[0];
+end;
+
+arr_mul_var_03(a : array of int, b : int, c : int) : int
+  return a[5] * c;
+end;
+
+arr_mul_var_04(a : array of int, b : int, c : int) : int
+  return c * a[5];
+end;
+
+arr_mul_var_05(a : array of int, b : int, c : int) : int
+  return a[b] * c;
+end;
+
+arr_mul_var_06(a : array of int, b : int, c : int) : int
+  return c * a[b];
+end;
+
+arr_mul_var_07(a : array of int, b : int, c : int) : int
+  return a[b + 5] * c;
+end;
+
+arr_mul_var_08(a : array of int, b : int, c : int) : int
+  return c * a[5 + b];
+end;
+
+arr_mul_var_09(a : array of int, b : int, c : int) : int
+  return a[(b + 5) * 1] * c;
+end;
+
+arr_mul_var_10(a : array of int, b : int, c : int) : int
+  return c * a[1 * (5 + b)];
+end;
+
