@@ -1,0 +1,9 @@
+foo(arr: array of int):int 
+    bar(arr);
+    return arr[0];
+end;
+
+bar(arr: array of int):int
+    arr[0] := 42;
+    return 0;
+end;
