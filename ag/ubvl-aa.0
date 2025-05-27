@@ -1,0 +1,1 @@
+f(x:array of int, y:array of int):array of int x:=y; return x; end;

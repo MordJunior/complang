@@ -1,0 +1,4 @@
+extern long f(long **, long, long);
+long a[] = {3,7,5,11};
+long *b[] = {a+1,a,a+3};
+RET(f(b,2,0) == 11 && f(b,0,1)==5);

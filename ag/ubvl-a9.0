@@ -1,0 +1,4 @@
+f(a:array of array of int, x:int):array of int
+  var y:array of int:=a[x];
+  return y;
+end;

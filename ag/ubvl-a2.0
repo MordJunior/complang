@@ -1,0 +1,2 @@
+f(x:int):int return g(x,x); end;
+g(z:int, y:int):int;

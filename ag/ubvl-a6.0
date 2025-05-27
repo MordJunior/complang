@@ -1,0 +1,2 @@
+g(x:int):array of int;
+f(x:int):array of int var y:array of int:=g(x); return y; end;

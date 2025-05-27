@@ -1,0 +1,1 @@
+f():int var y:int := 0; return y; end;
