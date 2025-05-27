@@ -1,0 +1,6 @@
+long a[1];
+
+extern long foo(long[]);
+
+a[0] = 0;
+RET(foo(a) == 42);
