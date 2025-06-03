@@ -1,0 +1,22 @@
+extern long foo(int a);
+long foo_check(int a)
+{
+    while (a < 5) {
+        if (a == 3) {
+            return 99;
+        }
+        a = a + 1;
+    }
+    return a;
+}
+
+int errors = 0;
+for (long a = 0; a < 7; a++) {
+    if (foo(a) != foo_check(a)) {
+        errors++;
+        printf("Error: foo(%ld) = %ld, expected %ld\n", a, foo(a), foo_check(a));
+        break;
+    }
+}
+
+RET(errors == 0);

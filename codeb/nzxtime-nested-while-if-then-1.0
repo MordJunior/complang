@@ -1,0 +1,9 @@
+foo(a: int): int
+    while a < 5 do
+        if a = 3 then
+            return 99;
+        end;
+        a := a + 1;
+    end;
+    return a;
+end;

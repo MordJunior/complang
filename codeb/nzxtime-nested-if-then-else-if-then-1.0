@@ -1,0 +1,10 @@
+foo(a: int, b: int): int
+    if a < 5 then
+        if b = 2 then
+            return 1;
+        end;
+        return 2;
+    else
+        return 3;
+    end;
+end;
