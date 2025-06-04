@@ -1,0 +1,7 @@
+foo(a: int) : int
+    while a = 0 or a = 1 or a = 2 or ((a + 2) = 2) do
+        return 1;
+    end;
+
+    return 0;
+end;

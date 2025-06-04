@@ -1,0 +1,9 @@
+foo(a: int, b: int): int
+    while a < 3 do
+        while b < 2 do
+            b := b + 1;
+        end;
+        a := a + 1;
+    end;
+    return a + b;
+end;

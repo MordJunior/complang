@@ -1,0 +1,10 @@
+foo(a: int, b: int): int
+    if a = 1 then
+        while b < 3 do
+            b := b + 1;
+        end;
+        return b;
+    else
+        return 0;
+    end;
+end;
