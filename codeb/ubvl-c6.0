@@ -1,0 +1,4 @@
+/* Kontrollflussmethode */
+f(a:array of int, null:array of int, i:int):int
+  if not(a=null or a[i]<0) then return 15; else return 12; end;
+end;

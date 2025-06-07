@@ -1,0 +1,3 @@
+extern long f(long *, long);
+long a[] = {3,7,5,11};
+RET(f(a,3) == 11 && f(a+1,1)==5);

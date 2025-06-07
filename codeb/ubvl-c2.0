@@ -1,0 +1,1 @@
+f(a:array of int, i:int):array of int a[i]:=5; return a; end;

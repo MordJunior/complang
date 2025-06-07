@@ -1,0 +1,2 @@
+extern long mymax(long,long);
+RET(mymax(-2,1) == 1 && mymax(2,1)==2);

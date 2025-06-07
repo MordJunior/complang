@@ -1,0 +1,8 @@
+search(a:array of int, n:int, key:int):int
+  var i:int:=0;
+  while i<n do
+    if a[i]=key then return i; end;
+    i:=i+1;
+  end;
+  return 0-1;
+end;

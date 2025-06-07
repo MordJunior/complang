@@ -1,0 +1,1 @@
+f(a:array of array of int, x:int, y:int):array of array of int a[x][y]:=2; return a; end;

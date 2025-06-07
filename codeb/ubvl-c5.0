@@ -1,0 +1,1 @@
+mymax(x:int, y:int):int if not x<y then return x; end; return y; end;
