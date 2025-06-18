@@ -1,0 +1,5 @@
+ggt(a:int, b:int):int
+  if a<b then return ggt(a,b-a); end;
+  if b<a then return ggt(b,a-b); end;
+  return b;
+end;

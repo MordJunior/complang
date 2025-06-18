@@ -1,0 +1,2 @@
+extern long f(long,long);
+RET(f(6,7) == 1 && f(-12,-29)==-17);

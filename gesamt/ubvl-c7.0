@@ -1,0 +1,1 @@
+fac(n:int):int var r:int:=1; while 0<n do r:=r*n; n:=n-1; end; return r; end;

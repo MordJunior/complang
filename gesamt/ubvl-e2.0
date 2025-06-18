@@ -1,0 +1,2 @@
+f(x:int, y:int):int return g(2+y,3*x)+5; end;
+g(u:int, v:int):int return u-(v*5); end;

@@ -1,0 +1,3 @@
+f(x:int, y:int):int return g(2+y,3*x)+5; end;
+g(u:int, v:int):int;
+/* C-Funktion: long g(long u, long v) { return u-(v*5); } */ 

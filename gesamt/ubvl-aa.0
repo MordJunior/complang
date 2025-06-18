@@ -1,0 +1,1 @@
+f(y:int, z:int):int return 4*y*z; end;

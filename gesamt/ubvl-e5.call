@@ -1,0 +1,2 @@
+extern long fac(long);
+RET(6==fac(3) && 120 == fac(5));

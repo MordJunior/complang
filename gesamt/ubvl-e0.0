@@ -1,0 +1,2 @@
+f(x:int):int return g(x+2)-4; end;
+g(x:int):int return x*3; end;

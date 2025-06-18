@@ -1,0 +1,6 @@
+malloc(n:int):array of int;
+memset(s:array of int, c:int, n:int):array of int;
+ff(n:int):array of int
+  var a:array of int:=malloc(n*8);
+  return memset(a,255,n*8);
+end;

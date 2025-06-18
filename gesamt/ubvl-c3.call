@@ -1,0 +1,5 @@
+extern long **f(long **, long, long);
+long a[] = {3,7,5,11};
+long *b[] = {a+1,a,a+3};
+long r[] = {3,7,2,11};
+RET(f(b,0,1)==b && memcmp(a,r,4*sizeof(long))==0);

@@ -1,0 +1,10 @@
+ggt(a:int, b:int):int
+  while not a=b do
+    if a<b then
+      b:=b-a;
+    else
+      a:=a-b;
+    end;
+  end;
+  return a;
+end;

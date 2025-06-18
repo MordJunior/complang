@@ -1,0 +1,3 @@
+extern long search(long *, long, long);
+long a[]={3,9,7,9};
+RET(search(a,4,7)==2 && search(a,4,9)==1 && search(a,4,8)==-1);
