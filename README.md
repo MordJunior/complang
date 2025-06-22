@@ -78,8 +78,6 @@ function runtest() {
         done
 }
 ```
-```
-```
 
 ## Notes
 - If you write your own tests, please share them by creating a pull request
