@@ -8,45 +8,77 @@ A student created testsuite for the [Übersetzterbau (Compilers)](https://tiss.t
 2. The tests starting from the "scanner" example should be picked up automatically from the test scripts on the server
 
 ## Tips
-With the following optional convenience function added to your `.bashrc` you can run the test suite by executing `runtest <exercise>` or simply `runtest` if you are in the directory you want to test:
+With the following optional convenience function added to your `.bashrc` you can run the test suite by executing `runtest <exercise> <exercise> ...`.
+If you want to run all tests just execute `runtest`. There are two flags available with the function:
+- `-s / --short` only outputs the last 5 lines that show how many tests were successful. 
+- `-p / --pause` waits after every test that was executed for user input (only useful when executing more than one test).
+
 ```bash
 function runtest() {
-    target="$1"
-    if [ -z "$target" ]; then
-        target="$(basename "$PWD")"
-    fi
-    git -C ~/test pull && "/usr/ftp/pub/ubvl/test/${target}/test"
+        OPT=$(getopt -o 'sp' -l 'short,pause' -n 'runtest' -- "$@")
+        if [ $? -ne 0 ]; then
+                echo "Usage: $1 [-s/--short] [-p/--pause] [test1, test2, ...]" >&2
+                return 1
+        fi
+
+        eval set -- "$OPT"
+        unset OPT
+
+        SHORT=0
+        PAUSE=0
+
+        while true; do
+                case "$1" in
+                        '-s'|'--short')
+                                SHORT=1
+                                shift
+                                continue
+                                ;;
+                        '-p'|'--pause')
+                                PAUSE=1
+                                shift
+                                continue
+                                ;;
+                        '--')
+                                shift
+                                break
+                                ;;
+                        *)
+                                echo "Unrecognised option $1" >&2
+                                return 1
+                                ;;
+                esac
+        done
+
+        TARGETS="$@"
+
+        if [[ $# -eq 0 ]]; then
+                echo "no args provided runing all tests"
+                TARGETS="asma asmb scanner parser ag codea codeb gesamt"
+        fi
+
+        if [ -d "~/test" ]; then
+                echo "could not find test directory. Only running provided tests"
+        else
+                git -C ~/test pull
+        fi
+
+        for target in $TARGETS; do
+                echo
+                echo "Running tests for $target"
+                if [ $SHORT ]; then
+                        "/usr/ftp/pub/ubvl/test/${target}/test" 2>/dev/null | tail -n5
+                else
+                        "/usr/ftp/pub/ubvl/test/${target}/test"
+                fi
+                if [ $PAUSE ]; then
+                        echo
+                        read -p "Press Enter to continue to the next test"
+                fi
+        done
 }
 ```
-
-### Better test function for multiple tests
-
-If you want to be able to run multiple test suites at once, you can use the following functions. It will run all test scripts you give it as arguments. It will wait for a keypress after each test, so you can check the output before moving on to the next one.
-
-```bash
-function runtest() {
-    if [ "$#" -eq 0 ]; then
-        set -- "$(basename "$PWD")"
-    fi
-
-    local i=0
-    local total=$#
-
-    for target in "$@"; do
-        ((i++))
-        if [ -d ~/test ]; then
-            git -C ~/test pull && "/usr/ftp/pub/ubvl/test/${target}/test"
-        else
-            echo "Could not find ~/test directory, only running provided tests"
-            "/usr/ftp/pub/ubvl/test/${target}/test"
-        fi
-
-        if [ "$i" -lt "$total" ]; then
-            echo
-            read -p "Press Enter to continue to the next test (completed $i/$total)..."
-        fi
-    done
-}
+```
 ```
 
 ## Notes
