@@ -66,12 +66,12 @@ function runtest() {
         for target in $TARGETS; do
                 echo
                 echo "Running tests for $target"
-                if [ $SHORT ]; then
+                if [ $SHORT -ne 0 ]; then
                         "/usr/ftp/pub/ubvl/test/${target}/test" 2>/dev/null | tail -n5
                 else
                         "/usr/ftp/pub/ubvl/test/${target}/test"
                 fi
-                if [ $PAUSE ]; then
+                if [ $PAUSE -ne 0 ]; then
                         echo
                         read -p "Press Enter to continue to the next test"
                 fi
